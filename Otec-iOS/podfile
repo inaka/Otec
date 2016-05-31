@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Otec' do
+	pod 'IKEventSource'
+	pod 'Jayme'
+	pod 'SwiftyJSON'
+end

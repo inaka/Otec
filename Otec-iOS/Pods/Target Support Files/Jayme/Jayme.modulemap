@@ -1,0 +1,6 @@
+framework module Jayme {
+  umbrella header "Jayme-umbrella.h"
+
+  export *
+  module * { export * }
+}

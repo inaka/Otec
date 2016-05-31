@@ -5,6 +5,10 @@
 ## Build generated
 build/
 DerivedData
+.DS_Store
+/Otec-iOS/Pods/*
+/Otec-iOS/Pods
+./Otec-iOS/.DS_Store
 
 ## Various settings
 *.pbxuser
@@ -43,8 +47,8 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
-
+/Otec-iOS/Pods/*
+/Otec-iOS/Pods
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.

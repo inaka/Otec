@@ -1,0 +1,6 @@
+framework module Pods_Otec {
+  umbrella header "Pods-Otec-umbrella.h"
+
+  export *
+  module * { export * }
+}

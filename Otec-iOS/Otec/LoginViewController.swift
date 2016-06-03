@@ -29,10 +29,13 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    @IBAction func login(sender: AnyObject) {
-        let newspaperName = newspaperTextfield.text!
+    @IBAction func login(sender: UIButton) {
+        if !self.checkFieldsEmptiness([self.newspaperTextfield]) {
+            self.showAlertWithTitle("Error", message: "Newspaper name is requiered")
+            return
+        }
         
-        let future = NewspaperRepository().findByID(newspaperName)
+        let future = NewspaperRepository().findByID(newspaperTextfield.text!)
         future.start() { result in
             switch result {
             case .Success(let newspaper):
@@ -40,14 +43,35 @@ class LoginViewController: UIViewController {
                     NSUserDefaults.standardUserDefaults().setObject(newspaper.id, forKey:Constants.newspaperUserDefaultsKey)
                     self.pushFeedsViewController(animated: true)
                 }
-            case .Failure(let error):
-                print ("error : \(error)")
+            case .Failure(_):
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.showAlertWithTitle("Error", message: "Check your newspaper name and try again")
+                }
             }
         }
     }
 
-    @IBAction func loginAsGuestUser(sender: AnyObject) {
+    @IBAction func loginAsGuestUser(sender: UIButton) {
         self.pushFeedsViewController(animated: true)
     }
+ 
+    private func checkFieldsEmptiness(textInputs: [TextValidable]) -> Bool{
+        var inputsAllValid = true
+        
+        textInputs.forEach { if !$0.hasValidText { inputsAllValid = false } }
+        
+        return inputsAllValid
+    }
     
+    private func showAlertWithTitle(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { (action) in
+            alertController.dismissViewControllerAnimated(false, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }

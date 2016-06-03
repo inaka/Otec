@@ -147,6 +147,13 @@
                             <constraint firstAttribute="trailing" secondItem="dTV-O3-10p" secondAttribute="trailing" constant="50" id="WgM-Mg-UYB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="r10-dv-Q3G">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="1tG-kq-WQt">
+                            <connections>
+                                <action selector="createNewspaper:" destination="niM-FL-IoS" id="rzQ-CB-gSu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="Kj1-GC-v8K" id="3nl-2d-U5l"/>
                         <outlet property="nameTextfield" destination="dTV-O3-10p" id="P6H-i4-zij"/>

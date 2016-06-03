@@ -50,7 +50,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="Hog-e0-Ej3" eventType="touchUpInside" id="0Vf-1C-6Nu"/>
-                                    <segue destination="k45-ix-U0Z" kind="show" id="tzz-6e-IR7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-sr-x1c">
@@ -64,13 +63,30 @@
                                     <segue destination="niM-FL-IoS" kind="show" identifier="createNewspaper" id="Znz-W3-jy7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-o8-r0u">
+                                <rect key="frame" x="70" y="243" width="460" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="bAi-AL-WHw"/>
+                                    <constraint firstAttribute="height" constant="30" id="cYh-tu-cLK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Enter as guest user">
+                                    <color key="titleColor" red="1" green="0.061523099769999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAsGuestUser:" destination="Hog-e0-Ej3" eventType="touchUpInside" id="NJV-u8-YNg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O1x-sr-x1c" firstAttribute="leading" secondItem="tMF-UK-qsg" secondAttribute="leadingMargin" constant="50" id="4Ms-hg-txd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kzg-pW-hnY" secondAttribute="trailing" constant="50" id="7eq-Kh-iLI"/>
+                            <constraint firstItem="gh3-o8-r0u" firstAttribute="leading" secondItem="tMF-UK-qsg" secondAttribute="leading" constant="70" id="AeE-yf-xEs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O1x-sr-x1c" secondAttribute="trailing" constant="50" id="CCy-Vm-MG7"/>
                             <constraint firstItem="bfq-Ot-Enj" firstAttribute="top" secondItem="jdt-gt-vNf" secondAttribute="bottom" constant="20" id="DUc-Ei-8PV"/>
+                            <constraint firstItem="gh3-o8-r0u" firstAttribute="top" secondItem="O1x-sr-x1c" secondAttribute="bottom" constant="19" id="Jmv-QA-Zkn"/>
+                            <constraint firstAttribute="trailing" secondItem="gh3-o8-r0u" secondAttribute="trailing" constant="70" id="KmX-op-vy3"/>
                             <constraint firstItem="bfq-Ot-Enj" firstAttribute="leading" secondItem="tMF-UK-qsg" secondAttribute="leading" constant="50" id="Y8u-MC-bhE"/>
                             <constraint firstItem="Kzg-pW-hnY" firstAttribute="top" secondItem="bfq-Ot-Enj" secondAttribute="bottom" constant="20" id="aU9-gZ-Arx"/>
                             <constraint firstItem="Kzg-pW-hnY" firstAttribute="leading" secondItem="tMF-UK-qsg" secondAttribute="leadingMargin" constant="50" id="hJO-BI-gxj"/>
@@ -90,7 +106,7 @@
         <!--Create Newspaper View Controller-->
         <scene sceneID="ZO9-uf-3cA">
             <objects>
-                <viewController id="niM-FL-IoS" customClass="CreateNewspaperViewController" customModule="Otec" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createViewController" id="niM-FL-IoS" customClass="CreateNewspaperViewController" customModule="Otec" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kNQ-pe-5s7"/>
                         <viewControllerLayoutGuide type="bottom" id="JTX-ha-F52"/>
@@ -130,15 +146,19 @@
                             <constraint firstAttribute="trailing" secondItem="dTV-O3-10p" secondAttribute="trailing" constant="50" id="WgM-Mg-UYB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="Kj1-GC-v8K" id="3nl-2d-U5l"/>
+                        <outlet property="nameTextfield" destination="dTV-O3-10p" id="P6H-i4-zij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5l-F2-l9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="731" y="1301"/>
         </scene>
-        <!--View Controller-->
+        <!--News Feed View Controller-->
         <scene sceneID="Ua1-ON-jQM">
             <objects>
-                <viewController id="k45-ix-U0Z" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsFeedViewController" id="k45-ix-U0Z" customClass="NewsFeedViewController" customModule="Otec" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yA1-Zu-smh"/>
                         <viewControllerLayoutGuide type="bottom" id="7lV-xG-FNO"/>
@@ -152,13 +172,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="LhC-Vh-HHR">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="122"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LhC-Vh-HHR" id="WKZ-a6-0oC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Planet" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-bN-Fqv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Daily Planet" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-bN-Fqv">
                                                     <rect key="frame" x="402" y="18" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="A5s-mk-lTD"/>
@@ -168,7 +188,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPZ-N8-eyE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPZ-N8-eyE">
                                                     <rect key="frame" x="10" y="49" width="580" height="62"/>
                                                     <string key="text">A serious report was run today from the Centropolis Court. Dr Howard X. Jett was arrested the night before due to possession of illegla scientific R&amp;D, and working sattelite rocket, both confiscated. Dr. Jett claims to have discovered the secret behind superpowers themselves, and the research papers &amp; vieo logs brought with him prove this.
 Clark Kent reported on this in a strangely rhetoical manner, "If this research gets out, what would Superman do?"</string>
@@ -176,7 +196,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metahuman research discovered!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-b5-kYl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Metahuman research discovered!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-b5-kYl">
                                                     <rect key="frame" x="10" y="10" width="263" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="gT2-d4-D5q"/>
@@ -220,6 +240,12 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                             <constraint firstItem="vyK-me-ron" firstAttribute="top" secondItem="WNu-vs-KDU" secondAttribute="bottom" id="swN-FH-lM3"/>
                             <constraint firstItem="WNu-vs-KDU" firstAttribute="leading" secondItem="itk-th-kxM" secondAttribute="leading" id="vEJ-iE-3vR"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vyK-me-ron"/>
+                                <exclude reference="WNu-vs-KDU"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8u2-20-1sm" userLabel="First Responder" sceneMemberID="firstResponder"/>

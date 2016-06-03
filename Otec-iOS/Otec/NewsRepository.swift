@@ -8,10 +8,17 @@
 
 import Foundation
 import Jayme
-class NewsRepository: ServerRepository {
+class NewsRepository: CRUDRepository {
     
     typealias EntityType = News
-    let backend = ServerBackend()
-    let path = "News"
+    let backend = NSURLSessionBackend()
+    let name = "News"
+    
+    func create(entity: EntityType) -> Future<EntityType, JaymeError> {
+        let path = self.name
+        return self.backend.futureForPath(path, method: .POST, parameters: entity.dictionaryValue)
+            .andThen { DataParser().dictionaryFromData($0.0) }
+            .andThen { EntityParser().entityFromDictionary($0) }
+    }
     
 }

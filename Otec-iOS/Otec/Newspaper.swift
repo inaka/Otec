@@ -11,45 +11,31 @@ import Jayme
 import SwiftyJSON
 
 struct Newspaper: Identifiable {
-    let id: Identifier
+    let id: String
     let news: [News]
     let description : String
 }
 
 extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
     
-    init?(dictionary: StringDictionary) {
+    init(dictionary: [String: AnyObject]) throws {
         let json = JSON(dictionary)
         guard let
             id = json["name"].string,
             description = json["description"].string
 //            news = json["news"].array
-            else { return nil }
+            else { throw JaymeError.ParsingError }
         self.id = id
         self.description = description
         self.news = [News]()//Newspaper.newsFromDictionary(["":""])
-    }
-    
-    init(nonJSONdictionary: [String:String]) {
-        guard let
-            id = nonJSONdictionary["name"],
-            description = nonJSONdictionary["description"]
-            else {
-                self.id = "FAKE"
-                self.description = "FAKE"
-                self.news = [News]()
-                return
-        }
-        self.id = id
-        self.description = description
-        self.news = [News]()
     }
     
     private static func newsFromDictionary (news: [JSON]) -> [News]{
         
         return [News]()
     }
-    var dictionaryValue: StringDictionary {
+    
+    var dictionaryValue: [String: AnyObject] {
         return [
             "name": self.id,
             "description": self.description
@@ -57,3 +43,5 @@ extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
     }
     
 }
+
+extension String: CustomStringConvertible { public var description: String { return self } }

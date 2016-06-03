@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     }
 
     private func checkIfLoggedInThenShowFeed() {
-        if (NSUserDefaults.standardUserDefaults().objectForKey("userNewspaperID") != nil) {
+        if (NSUserDefaults.standardUserDefaults().objectForKey(Constants.newspaperUserDefaultsKey) != nil) {
             self.pushFeedsViewController(animated: false)
         }
     }
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
             switch result {
             case .Success(let newspaper):
                 dispatch_async(dispatch_get_main_queue()) {
-                    NSUserDefaults.standardUserDefaults().setObject(newspaper.id, forKey:"userNewspaperID")
+                    NSUserDefaults.standardUserDefaults().setObject(newspaper.id, forKey:Constants.newspaperUserDefaultsKey)
                     self.pushFeedsViewController(animated: true)
                 }
             case .Failure(let error):

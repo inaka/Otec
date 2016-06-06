@@ -1,6 +1,6 @@
 use_frameworks!
 target 'Otec' do
 	pod 'IKEventSource'
-	pod 'Jayme'
+	pod 'Jayme', :git => 'git@github.com:inaka/Jayme.git', :branch => 'pablo.issue47'
 	pod 'SwiftyJSON'
 end

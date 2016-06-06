@@ -11,7 +11,7 @@ import Jayme
 import SwiftyJSON
 
 struct News: Identifiable {
-    let id: Identifier
+    let id: String
     let title : String
     let body : String
     let newspaper : String
@@ -20,7 +20,7 @@ struct News: Identifiable {
 
 extension News: DictionaryInitializable, DictionaryRepresentable {
     
-    init?(dictionary: StringDictionary) {
+    init(dictionary: [String: AnyObject]) throws {
         let json = JSON(dictionary)
         guard let
             id = json["id"].string,
@@ -28,7 +28,7 @@ extension News: DictionaryInitializable, DictionaryRepresentable {
             body = json["body"].string,
             newspaper = json["newspaper_name"].string,
             createdAt = News.creationDateFromDateString(json["created_at"].string)
-            else { return nil }
+            else {  throw JaymeError.ParsingError }
         self.id = id
         self.title = title
         self.body = body
@@ -60,7 +60,7 @@ extension News: DictionaryInitializable, DictionaryRepresentable {
     private func dateStringFromCreationDate(date: NSDate) -> String {
         return "12/19/1989"
     }
-    var dictionaryValue: StringDictionary {
+    var dictionaryValue: [String: AnyObject] {
         return [
             "id": self.id,
             "title": self.title,

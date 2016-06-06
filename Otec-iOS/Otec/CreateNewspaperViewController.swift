@@ -41,7 +41,7 @@ class CreateNewspaperViewController: UIViewController {
             switch result {
             case .Success(let newspaper):
                 dispatch_async(dispatch_get_main_queue()) {
-                    NSUserDefaults.standardUserDefaults().setObject(newspaper.id, forKey:Constants.newspaperUserDefaultsKey)
+                    UserNewspaperSession.saveUserNewspaper(newspaper.id)
                     self.pushFeedsViewController(animated: true)
                 }
             case .Failure(let error):

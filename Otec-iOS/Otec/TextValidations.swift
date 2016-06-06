@@ -16,17 +16,13 @@ protocol TextValidable {
 extension UITextField: TextValidable {
     var hasValidText: Bool {
         guard let text = self.text else { return false }
-        
-        if text == "" { return false }
 
-        return true
+        return text != ""
     }
 }
 
 extension UITextView: TextValidable {
     var hasValidText: Bool {
-        if self.text == "" { return false }
-        
-        return true
+        return self.text != ""
     }
 }

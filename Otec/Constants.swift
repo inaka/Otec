@@ -10,4 +10,5 @@ import Foundation
 //Application.settings.apiURL
 struct Constants {
     static let newspaperUserDefaultsKey = "userNewspaperID"
+    static let newsFeedCellIdentifier = "newsCell"
 }

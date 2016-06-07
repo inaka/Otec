@@ -52,8 +52,6 @@ extension News: DictionaryInitializable, DictionaryRepresentable {
     }
     
     private static func creationDateFromDateString(dateString: String?) -> NSDate? {
-        guard let creationDateString = dateString else { return nil }
-        
         return NSDate()
         
     }

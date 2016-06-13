@@ -24,12 +24,13 @@
 
 import UIKit
 
-class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
     var allNewspapers = [Newspaper]()
+    var dataSource = NewspaperSubscriptionDataSource(newspapers: [Newspaper](), newspaperSubscribedIDs: [String]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,31 +57,14 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         future.start() { result in
             switch result {
             case .Success(let newspapers):
-                    self.allNewspapers = newspapers
-                    self.tableView.reloadData()
+                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSuscriptedIDs)
+                self.allNewspapers = newspapers
+                self.tableView.dataSource = self.dataSource
+                self.tableView.reloadData()
             case .Failure(_):
                     self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.")
             }
         }
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.allNewspapers.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let newspaper = self.allNewspapers[indexPath.row]
-        
-        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
-            cell.textLabel!.text = newspaper.id
-            cell.accessoryType = self.newspaperSubscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
-            return cell
-        }
-        
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        cell.textLabel!.text = newspaper.id
-        cell.accessoryType = self.newspaperSubscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
-        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -95,6 +79,8 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         
         UserNewspaperSession.saveNewspapersSubscription(self.newspaperSubscriptedIDs)
         
+        self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSuscriptedIDs)
+        self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
     }
 }

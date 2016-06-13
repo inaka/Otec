@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vyK-me-ron">
-                                <rect key="frame" x="0.0" y="-46" width="600" height="582"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="122" id="LhC-Vh-HHR" customClass="NewsTableViewCell" customModule="Otec" customModuleProvider="target">
@@ -264,7 +264,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                             <constraint firstAttribute="trailing" secondItem="vyK-me-ron" secondAttribute="trailing" id="4lT-Gv-S9k"/>
                             <constraint firstItem="7lV-xG-FNO" firstAttribute="top" secondItem="vyK-me-ron" secondAttribute="bottom" id="5Y2-fb-7VS"/>
                             <constraint firstItem="WNu-vs-KDU" firstAttribute="top" secondItem="yA1-Zu-smh" secondAttribute="bottom" id="HgI-sc-za9"/>
-                            <constraint firstItem="vyK-me-ron" firstAttribute="top" secondItem="yA1-Zu-smh" secondAttribute="bottom" priority="900" constant="-46" id="PJ5-PG-78Y"/>
+                            <constraint firstItem="vyK-me-ron" firstAttribute="top" secondItem="yA1-Zu-smh" secondAttribute="bottom" priority="900" id="PJ5-PG-78Y"/>
                             <constraint firstItem="vyK-me-ron" firstAttribute="leading" secondItem="itk-th-kxM" secondAttribute="leading" id="eyX-qG-kBD"/>
                             <constraint firstAttribute="trailing" secondItem="WNu-vs-KDU" secondAttribute="trailing" id="lZL-Hq-lly"/>
                             <constraint firstItem="vyK-me-ron" firstAttribute="top" secondItem="WNu-vs-KDU" secondAttribute="bottom" id="swN-FH-lM3"/>
@@ -311,11 +311,53 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-Kz-LT1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-Kz-LT1">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newspaperSubscriptionCell" id="PQF-co-1N3" customClass="NewspaperSubscriptionTableViewCell" customModule="Otec" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQF-co-1N3" id="vIm-QO-OMG">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-jQ-frx">
+                                                    <rect key="frame" x="10" y="10" width="582" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="a1I-rG-aAw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwQ-FF-hhF">
+                                                    <rect key="frame" x="10" y="36" width="580" height="47"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="47" id="103-Z4-FKL"/>
+                                                    </constraints>
+                                                    <string key="text">s an American daily newspaper, founded and continuously published in New York City since September 18, 1851, by The New York Times Company. The New York Times has won 117 Pulitzer Prizes, more than any other news organization.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="T1m-jQ-frx" firstAttribute="leading" secondItem="vIm-QO-OMG" secondAttribute="leading" constant="10" id="1KT-pO-5Tx"/>
+                                                <constraint firstAttribute="trailing" secondItem="xwQ-FF-hhF" secondAttribute="trailing" constant="10" id="AYQ-gI-ol1"/>
+                                                <constraint firstAttribute="trailing" secondItem="T1m-jQ-frx" secondAttribute="trailing" constant="8" id="MHS-IB-OJv"/>
+                                                <constraint firstItem="xwQ-FF-hhF" firstAttribute="leading" secondItem="vIm-QO-OMG" secondAttribute="leading" constant="10" id="RMw-6l-hjZ"/>
+                                                <constraint firstItem="T1m-jQ-frx" firstAttribute="top" secondItem="vIm-QO-OMG" secondAttribute="top" constant="10" id="aXJ-sB-rCU"/>
+                                                <constraint firstItem="xwQ-FF-hhF" firstAttribute="top" secondItem="T1m-jQ-frx" secondAttribute="bottom" constant="5" id="tbm-PJ-D76"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newspaperDescriptionLabel" destination="xwQ-FF-hhF" id="tH7-RQ-s3D"/>
+                                            <outlet property="newspaperNameLabel" destination="T1m-jQ-frx" id="LMZ-3D-bin"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="qWT-Bq-cAE" id="eBJ-qt-yNq"/>
                                     <outlet property="delegate" destination="qWT-Bq-cAE" id="wtn-5i-Wtc"/>
                                 </connections>
                             </tableView>

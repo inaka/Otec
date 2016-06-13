@@ -40,14 +40,10 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         future.start() { result in
             switch result {
             case .Success(let newspapers):
-                dispatch_async(dispatch_get_main_queue()) {
                     self.allNewspapers = newspapers
                     self.tableView.reloadData()
-                }
             case .Failure(_):
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again."	)
-                }
+                    Util.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.", onViewController:self)
             }
         }
     }

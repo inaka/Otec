@@ -41,14 +41,10 @@ class CreateNewspaperViewController: UIViewController {
         future.start() { result in
             switch result {
             case .Success(let newspaper):
-                dispatch_async(dispatch_get_main_queue()) {
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
                     self.pushFeedsViewController(animated: true)
-                }
             case .Failure(_):
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.showAlertWithTitle("Error", message: "A server error happened.")
-                }
+                    Util.showAlertWithTitle("Error", message: "A server error happened.", onViewController:self)
             }
         }
     }

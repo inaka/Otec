@@ -23,7 +23,6 @@ extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
         guard let
             id = json["name"].string,
             description = json["description"].string
-//            news = json["news"].array
             else { throw JaymeError.ParsingError }
         self.id = id
         self.description = description

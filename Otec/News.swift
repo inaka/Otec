@@ -35,22 +35,7 @@ extension News: DictionaryInitializable, DictionaryRepresentable {
         self.newspaper = newspaper
         self.creationDate = createdAt
     }
-    
-    init?(dictionary: [String:String]) {
-        guard let
-            id = dictionary["id"],
-            title = dictionary["title"],
-            body = dictionary["body"],
-            newspaper = dictionary["newspaper_name"],
-            createdAt = News.creationDateFromDateString(dictionary["created_at"])
-            else { return nil }
-        self.id = id
-        self.title = title
-        self.body = body
-        self.newspaper = newspaper
-        self.creationDate = createdAt
-    }
-    
+        
     private static func creationDateFromDateString(dateString: String?) -> NSDate? {
         return NSDate()
         

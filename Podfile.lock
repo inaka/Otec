@@ -5,17 +5,17 @@ PODS:
 
 DEPENDENCIES:
   - IKEventSource
-  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `pablo.issue47`)
+  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `v2.0.1`)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
   Jayme:
-    :branch: pablo.issue47
+    :branch: v2.0.1
     :git: git@github.com:inaka/Jayme.git
 
 CHECKOUT OPTIONS:
   Jayme:
-    :commit: 5ad6f24508f54a614a9020949ebdf40f30082899
+    :commit: 111bb66c345321312af0d4a9bf79b64575cb9af8
     :git: git@github.com:inaka/Jayme.git
 
 SPEC CHECKSUMS:
@@ -23,6 +23,6 @@ SPEC CHECKSUMS:
   Jayme: 3ad1eeca0dc3dd4e1db8266a63e82d641d5fc4c0
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: a06cacb73e25582abb73f3d8da4f8ee5d285479b
+PODFILE CHECKSUM: cabc084d179fb1283d5ee3f817415a5326173628
 
 COCOAPODS: 1.0.0

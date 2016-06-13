@@ -25,6 +25,10 @@
 		56BB7A8F1CE39A180095045C /* CreateNewspaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB7A8E1CE39A180095045C /* CreateNewspaperViewController.swift */; };
 		56E1FD491CEE00FB001FC8A4 /* Newspaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1FD481CEE00FB001FC8A4 /* Newspaper.swift */; };
 		56E1FD4B1CEE0116001FC8A4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1FD4A1CEE0116001FC8A4 /* News.swift */; };
+		56E34B5C1D085E5900C48914 /* CreateNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E34B5B1D085E5900C48914 /* CreateNewsViewController.swift */; };
+		56E34B5E1D088A0700C48914 /* NewspapersSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E34B5D1D088A0700C48914 /* NewspapersSubscriptionViewController.swift */; };
+		56E34B601D08918300C48914 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E34B5F1D08918300C48914 /* Util.swift */; };
+		56E34B621D09D6B900C48914 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E34B611D09D6B900C48914 /* NewsDetailsViewController.swift */; };
 		B83FA77FDCAF59A011BD8826 /* Pods_Otec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FBEB86AB9FD5BF7C964FF /* Pods_Otec.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,10 @@
 		56BB7A8E1CE39A180095045C /* CreateNewspaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewspaperViewController.swift; sourceTree = "<group>"; };
 		56E1FD481CEE00FB001FC8A4 /* Newspaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newspaper.swift; sourceTree = "<group>"; };
 		56E1FD4A1CEE0116001FC8A4 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		56E34B5B1D085E5900C48914 /* CreateNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewsViewController.swift; sourceTree = "<group>"; };
+		56E34B5D1D088A0700C48914 /* NewspapersSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspapersSubscriptionViewController.swift; sourceTree = "<group>"; };
+		56E34B5F1D08918300C48914 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		56E34B611D09D6B900C48914 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		6C3FBEB86AB9FD5BF7C964FF /* Pods_Otec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A58EFAC7B7F3A640D98CC9 /* Pods-Otec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otec.release.xcconfig"; path = "Pods/Target Support Files/Pods-Otec/Pods-Otec.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +132,7 @@
 				564C9DBD1D01CDA800CEEB8C /* Constants.swift */,
 				56B6897F1D05B33B008D0320 /* UserNewspaperSession.swift */,
 				569854191D020AE5001B0F0F /* TextValidations.swift */,
+				56E34B5F1D08918300C48914 /* Util.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -160,9 +169,12 @@
 				56BB7A601CE360590095045C /* NewsFeedViewController.swift */,
 				56B689871D06103E008D0320 /* NewsTableViewCell.swift */,
 				56B689851D05FB7C008D0320 /* NewsDataSource.swift */,
+				56E34B5B1D085E5900C48914 /* CreateNewsViewController.swift */,
+				56E34B611D09D6B900C48914 /* NewsDetailsViewController.swift */,
 				56BB7A621CE360590095045C /* Main.storyboard */,
 				56BB7A8C1CE375170095045C /* LoginViewController.swift */,
 				56BB7A8E1CE39A180095045C /* CreateNewspaperViewController.swift */,
+				56E34B5D1D088A0700C48914 /* NewspapersSubscriptionViewController.swift */,
 				56BB7A651CE360590095045C /* Assets.xcassets */,
 				56BB7A671CE360590095045C /* LaunchScreen.storyboard */,
 				56BB7A6A1CE360590095045C /* Info.plist */,
@@ -391,16 +403,20 @@
 				56BB7A8D1CE375170095045C /* LoginViewController.swift in Sources */,
 				56E1FD491CEE00FB001FC8A4 /* Newspaper.swift in Sources */,
 				56BB72241CF4CC5A000A7006 /* NewspaperRepository.swift in Sources */,
+				56E34B601D08918300C48914 /* Util.swift in Sources */,
 				5698541A1D020AE5001B0F0F /* TextValidations.swift in Sources */,
 				56B689881D06103E008D0320 /* NewsTableViewCell.swift in Sources */,
+				56E34B621D09D6B900C48914 /* NewsDetailsViewController.swift in Sources */,
 				56BB7A611CE360590095045C /* NewsFeedViewController.swift in Sources */,
 				56BB72221CF4A8EF000A7006 /* NewsRepository.swift in Sources */,
+				56E34B5E1D088A0700C48914 /* NewspapersSubscriptionViewController.swift in Sources */,
 				56E1FD4B1CEE0116001FC8A4 /* News.swift in Sources */,
 				56BB7A8F1CE39A180095045C /* CreateNewspaperViewController.swift in Sources */,
 				56BB7A5F1CE360590095045C /* AppDelegate.swift in Sources */,
 				56B689801D05B33B008D0320 /* UserNewspaperSession.swift in Sources */,
 				564C9DBE1D01CDA800CEEB8C /* Constants.swift in Sources */,
 				56B689861D05FB7C008D0320 /* NewsDataSource.swift in Sources */,
+				56E34B5C1D085E5900C48914 /* CreateNewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +489,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -492,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -519,6 +536,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -532,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,9 +563,11 @@
 			baseConfigurationReference = 349A20B16E0E71922744B162 /* Pods-Otec.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Otec/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Inaka.Otec;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inaka.otec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -557,9 +577,11 @@
 			baseConfigurationReference = A0A58EFAC7B7F3A640D98CC9 /* Pods-Otec.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Otec/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Inaka.Otec;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inaka.otec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

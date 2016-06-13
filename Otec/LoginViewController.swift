@@ -23,6 +23,16 @@ class LoginViewController: UIViewController {
         }
     }
     
+    private func checkIfHasSuscriptions() -> Bool {
+        return !UserNewspaperSession.newspapersSuscribed().isEmpty
+    }
+    
+    private func pushSuscriptionsViewController(animated animated: Bool) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("NewspapersSubscriptionViewController") as! NewspapersSubscriptionViewController
+        self.navigationController?.pushViewController(viewController, animated: animated)
+    }
+    
     private func pushFeedsViewController(animated animated: Bool) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewControllerWithIdentifier("NewsFeedViewController") as! NewsFeedViewController
@@ -31,7 +41,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: UIButton) {
         if !self.checkFieldsEmptiness([self.newspaperTextfield]) {
-            self.showAlertWithTitle("Error", message: "Newspaper name is requiered")
+            Util.showAlertWithTitle("Error", message: "Newspaper name is requiered", onViewController:self)
             return
         }
         
@@ -39,20 +49,25 @@ class LoginViewController: UIViewController {
         future.start() { result in
             switch result {
             case .Success(let newspaper):
-                dispatch_async(dispatch_get_main_queue()) {
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
-                    self.pushFeedsViewController(animated: true)
-                }
+                    if self.checkIfHasSuscriptions() {
+                        self.pushFeedsViewController(animated: true)
+                    }else {
+                        self.pushSuscriptionsViewController(animated: true)
+                    }
             case .Failure(_):
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.showAlertWithTitle("Error", message: "Check your newspaper name and try again")
-                }
+                    Util.showAlertWithTitle("Error", message: "Check your newspaper name and try again", onViewController: self)
             }
         }
     }
 
     @IBAction func loginAsGuestUser(sender: UIButton) {
-        self.pushFeedsViewController(animated: true)
+        UserNewspaperSession.deleteUserNewspaper()
+        if self.checkIfHasSuscriptions() {
+            self.pushFeedsViewController(animated: true)
+        }else {
+            self.pushSuscriptionsViewController(animated: true)
+        }
     }
  
     private func checkFieldsEmptiness(textInputs: [TextValidable]) -> Bool{
@@ -61,16 +76,5 @@ class LoginViewController: UIViewController {
         textInputs.forEach { if !$0.hasValidText { inputsAllValid = false } }
         
         return inputsAllValid
-    }
-    
-    private func showAlertWithTitle(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        
-        let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { (action) in
-            alertController.dismissViewControllerAnimated(false, completion: nil)
-        }
-        alertController.addAction(cancelAction)
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

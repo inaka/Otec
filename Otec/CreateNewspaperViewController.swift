@@ -25,6 +25,7 @@ class CreateNewspaperViewController: UIViewController {
     
     @IBAction func createNewspaper(sender: UIBarButtonItem) {
         if !self.checkFieldsEmptiness([self.nameTextfield, self.descriptionTextView]) {
+            Util.showAlertWithTitle("Error", message: "Name and description are requiered.", onViewController:self)
             print ("name or description cannot be empty")
             return
         }
@@ -33,7 +34,7 @@ class CreateNewspaperViewController: UIViewController {
                                    "description":self.descriptionTextView.text!]
         
         guard let newspaper = try? Newspaper(dictionary:newspaperDictionary) else {
-            print("error")
+            Util.showAlertWithTitle("Error", message: "Error creating the newspaper.", onViewController:self)
             return
         }
         let future = NewspaperRepository().create(newspaper)
@@ -45,7 +46,9 @@ class CreateNewspaperViewController: UIViewController {
                     self.pushFeedsViewController(animated: true)
                 }
             case .Failure(let error):
-                print ("error : \(error)")
+                dispatch_async(dispatch_get_main_queue()) {
+                    Util.showAlertWithTitle("Error", message: "A server error happened.", onViewController:self)
+                }
             }
         }
     }

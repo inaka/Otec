@@ -13,7 +13,6 @@ class NewspaperRepository: CRUDRepository {
     typealias EntityType = Newspaper
     let backend = NSURLSessionBackend()
     let name = "newspapers"
-
     
     func create(entity: EntityType) -> Future<EntityType, JaymeError> {
         let path = self.name

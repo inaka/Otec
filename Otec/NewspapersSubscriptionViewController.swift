@@ -57,10 +57,8 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         future.start() { result in
             switch result {
             case .Success(let newspapers):
-                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSuscriptedIDs)
-                self.allNewspapers = newspapers
-                self.tableView.dataSource = self.dataSource
-                self.tableView.reloadData()
+                    self.allNewspapers = newspapers
+                    self.tableView.reloadData()
             case .Failure(_):
                     self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.")
             }

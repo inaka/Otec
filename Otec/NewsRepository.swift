@@ -37,7 +37,6 @@ class NewsRepository: CRUDRepository {
                              "id":id,
                              "newspaper_name":event]
         guard let new = try? News(dictionary:newDictionary) else {
-            print("error")
             return nil
         }
         return new
@@ -57,7 +56,8 @@ class NewsRepository: CRUDRepository {
     }
     
     private func urlStringWithPath(path: String) -> String {
-        return "http://43e9c7c6.ngrok.io" + "/" + path
+        return "http://localhost:4892" + "/" + path
+//        return "http://43e9c7c6.ngrok.io" + "/" + path
     }
     
 }

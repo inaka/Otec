@@ -60,8 +60,8 @@ class NewsRepository: CRUDRepository {
     }
     
     private func urlStringWithPath(path: String) -> String {
-//        return "http://localhost:4892" + "/" + path
-        return "https://54090428.ngrok.io" + "/" + path
+        return "http://localhost:4892" + "/" + path
+//        return "http://43e9c7c6.ngrok.io" + "/" + path
     }
     
 }

@@ -24,12 +24,12 @@ class NewspaperSubscriptionDataSource: NSObject, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let newspaper = self.newspapers[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.newspapersSubscriptionCellIdentifier) as? NewspaperSubscriptionTableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.NewspapersSubscriptionCellIdentifier) as? NewspaperSubscriptionTableViewCell {
             cell.newspaper = newspaper
             cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.newsFeedCellIdentifier, owner: self, options: nil).first as! NewspaperSubscriptionTableViewCell
+        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellIdentifier, owner: self, options: nil).first as! NewspaperSubscriptionTableViewCell
         cell.newspaper = newspaper
         cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None        
         return cell

@@ -46,7 +46,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
                 self.tableView.dataSource = self.dataSource
                 self.tableView.reloadData()
             case .Failure(_):
-                Util.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.", onViewController:self)
+                self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.")
             }
         }
     }

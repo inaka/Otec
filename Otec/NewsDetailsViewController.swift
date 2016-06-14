@@ -35,7 +35,7 @@ class NewsDetailsViewController: UIViewController {
                 viewController.newspaper = newspaper
                 self.navigationController?.pushViewController(viewController, animated: true)
             case .Failure(_):
-                Util.showAlertWithTitle("Error", message: "A server error happened.", onViewController:self)
+                self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }
     }

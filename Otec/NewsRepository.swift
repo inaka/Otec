@@ -41,7 +41,7 @@ class NewsRepository: CRUDRepository {
                              "id":id,
                              "newspaper_name":event]
         guard let new = try? News(dictionary:newDictionary) else {
-            return nil
+            throw JaymeError.ParsingError
         }
         return new
     }

@@ -21,13 +21,13 @@ class NewspaperNewsListViewController: UIViewController, UITableViewDelegate {
     }
     
     private func retrieveNewsFromServer() {
-        NewsRepository().findByID(self.newspaper.id){ responseNew in
-            guard let new = responseNew else { return }
-            self.news.append(new)
-            self.dataSource = NewsDataSource(news: self.news)
-            self.tableView.dataSource = self.dataSource
-            self.tableView.reloadData()
-        }
+//        NewsRepository().findByID(self.newspaper.id){ responseNew in
+//            guard let new = responseNew else { return }
+//            self.news.append(new)
+//            self.dataSource = NewsDataSource(news: self.news)
+//            self.tableView.dataSource = self.dataSource
+//            self.tableView.reloadData()
+//        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

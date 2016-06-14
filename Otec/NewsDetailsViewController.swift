@@ -39,6 +39,7 @@ class NewsDetailsViewController: UIViewController {
         self.newspaperNameLabel.userInteractionEnabled = true 
         self.newspaperNameLabel.addGestureRecognizer(tapRecognizer)
     }
+    
     func showNewspaperNewsList(gesture: UITapGestureRecognizer) {
         let future = NewspaperRepository().findByID(UserNewspaperSession.userNewspaperName())
         

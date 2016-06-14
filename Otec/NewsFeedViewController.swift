@@ -76,7 +76,6 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
             alertController.addAction(pushCreateNewsAction)
         }
         
-        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -90,7 +89,6 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
         let viewController = storyboard.instantiateViewControllerWithIdentifier("newsDetailsViewController") as! NewsDetailsViewController
         viewController.new = self.news[indexPath.row]
         self.navigationController?.pushViewController(viewController, animated: true)
-        
     }
 }
 

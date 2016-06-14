@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="122" id="21A-7Q-oeJ" customClass="NewsTableViewCell" customModule="Otec" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="122"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="21A-7Q-oeJ" id="pc9-sP-GbS">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Planet" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-Ms-ox2">
+                        <rect key="frame" x="490" y="10" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="TrS-g1-EsP"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cXE-v6-g5r"/>
+                            <constraint firstAttribute="width" constant="100" id="rCi-SB-56Y"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="xKk-Lg-uca"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.93286005790000004" blue="0.00092539059730000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metahuman research discovered!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK4-1M-YrV">
+                        <rect key="frame" x="10" y="10" width="480" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="FCZ-oB-2nf"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="W3c-9I-TPs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8K-Bx-FZ9">
+                        <rect key="frame" x="10" y="41" width="580" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="aJN-23-CvQ"/>
+                            <constraint firstAttribute="height" constant="62" id="jjZ-ZQ-Eer"/>
+                        </constraints>
+                        <string key="text">A serious report was run today from the Centropolis Court. Dr Howard X. Jett was arrested the night before due to possession of illegla scientific R&amp;D, and working sattelite rocket, both confiscated. Dr. Jett claims to have discovered the secret behind superpowers themselves, and the research papers &amp; vieo logs brought with him prove this.
+Clark Kent reported on this in a strangely rhetoical manner, "If this research gets out, what would Superman do?"</string>
+                        <fontDescription key="fontDescription" name="Menlo-Italic" family="Menlo" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="I8K-Bx-FZ9" firstAttribute="top" secondItem="qAa-Ms-ox2" secondAttribute="bottom" constant="10" id="3S3-ze-CCM"/>
+                    <constraint firstAttribute="trailing" secondItem="qAa-Ms-ox2" secondAttribute="trailing" constant="10" id="5V2-yC-bDX"/>
+                    <constraint firstItem="I8K-Bx-FZ9" firstAttribute="top" secondItem="zK4-1M-YrV" secondAttribute="bottom" constant="10" id="9Vw-bP-ndt"/>
+                    <constraint firstItem="zK4-1M-YrV" firstAttribute="top" secondItem="pc9-sP-GbS" secondAttribute="top" constant="10" id="9cn-VW-d3L"/>
+                    <constraint firstItem="qAa-Ms-ox2" firstAttribute="top" secondItem="pc9-sP-GbS" secondAttribute="top" constant="10" id="Acm-0I-1I6"/>
+                    <constraint firstItem="qAa-Ms-ox2" firstAttribute="leading" secondItem="zK4-1M-YrV" secondAttribute="trailing" id="OA5-t2-diG"/>
+                    <constraint firstAttribute="trailing" secondItem="I8K-Bx-FZ9" secondAttribute="trailing" constant="10" id="R0w-A9-n5z"/>
+                    <constraint firstItem="I8K-Bx-FZ9" firstAttribute="leading" secondItem="pc9-sP-GbS" secondAttribute="leading" constant="10" id="cJ5-iv-zxo"/>
+                    <constraint firstItem="I8K-Bx-FZ9" firstAttribute="top" secondItem="zK4-1M-YrV" secondAttribute="bottom" constant="18" id="i5I-9a-JM8"/>
+                    <constraint firstItem="zK4-1M-YrV" firstAttribute="leading" secondItem="pc9-sP-GbS" secondAttribute="leading" constant="10" id="uAb-ah-aKC"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="i5I-9a-JM8"/>
+                        <exclude reference="3S3-ze-CCM"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="newsBodyLabel" destination="I8K-Bx-FZ9" id="pZr-kf-3Jj"/>
+                <outlet property="newsTitleLabel" destination="zK4-1M-YrV" id="1av-9F-9YY"/>
+                <outlet property="newspaperNameLabel" destination="qAa-Ms-ox2" id="Iu5-QB-d37"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

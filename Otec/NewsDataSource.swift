@@ -35,13 +35,14 @@ class NewsDataSource: NSObject, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.news.count
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.NewsFeedCellIdentifier) as? NewsTableViewCell {
             cell.news = self.news[indexPath.row]
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellIdentifier, owner: self, options: nil).first as! NewsTableViewCell
+        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil).first as! NewsTableViewCell
         cell.news = self.news[indexPath.row]
         return cell
     }

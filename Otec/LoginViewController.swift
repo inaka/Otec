@@ -40,8 +40,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(sender: UIButton) {
-        if !self.checkFieldsEmptiness([self.newspaperTextfield]) {
-            Util.showAlertWithTitle("Error", message: "Newspaper name is requiered", onViewController:self)
+        if !self.haveValidTexts([self.newspaperTextfield]) {
+            self.showAlertWithTitle("Error", message: "Newspaper name is requiered")
             return
         }
         
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
                         self.pushSuscriptionsViewController(animated: true)
                     }
             case .Failure(_):
-                    Util.showAlertWithTitle("Error", message: "Check your newspaper name and try again", onViewController: self)
+                    self.showAlertWithTitle("Error", message: "Check your newspaper name and try again")
             }
         }
     }
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         }
     }
  
-    private func checkFieldsEmptiness(textInputs: [TextValidable]) -> Bool{
+    private func haveValidTexts(textInputs: [TextValidable]) -> Bool{
         var inputsAllValid = true
         
         textInputs.forEach { if !$0.hasValidText { inputsAllValid = false } }

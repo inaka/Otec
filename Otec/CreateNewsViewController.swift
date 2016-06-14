@@ -19,7 +19,7 @@ class CreateNewsViewController: UIViewController {
     }
     
     @IBAction func createNew(sender: UIBarButtonItem) {
-        if !self.checkFieldsEmptiness([self.newNameTextfield, self.newBodyTextView]) {
+        if !self.haveValidTexts([self.newNameTextfield, self.newBodyTextView]) {
             print ("name or description cannot be empty")
             return
         }
@@ -46,7 +46,7 @@ class CreateNewsViewController: UIViewController {
         }
     }
     
-    private func checkFieldsEmptiness(textInputs: [TextValidable]) -> Bool{
+    private func haveValidTexts(textInputs: [TextValidable]) -> Bool{
         var inputsAllValid = true
         
         textInputs.forEach {

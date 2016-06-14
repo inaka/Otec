@@ -1,17 +1,15 @@
 //
-//  Util.swift
+//  UIViewController+ErrorAlert.swift
 //  Otec
 //
 //  Created by El gera de la gente on 6/8/16.
 //  Copyright © 2016 Inaka. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import IKEventSource
 
-struct Util {
-    static func showAlertWithTitle(title: String, message: String, onViewController viewController: UIViewController) {
+extension UIViewController {
+    func showAlertWithTitle(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { (action) in
@@ -19,6 +17,6 @@ struct Util {
         }
         alertController.addAction(cancelAction)
         
-        viewController.presentViewController(alertController, animated: true, completion: nil)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

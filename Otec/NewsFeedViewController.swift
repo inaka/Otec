@@ -25,7 +25,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
     }
     
     private func retrieveNewsFromServer() {
-        NewsRepository().findAll(withEventSource: self.eventSource) { responseNew in
+        NewsRepository().findNews(withEventSource: self.eventSource) { responseNew in
             guard let new = responseNew else { return }
             self.news.append(new)
             self.dataSource = NewsDataSource(news: self.news)

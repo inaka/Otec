@@ -15,7 +15,7 @@ class NewsRepository: CRUDRepository {
     let backend = NSURLSessionBackend()
     let name = "news"
     
-    func findAll(withEventSource eventSource: EventSource, newReceivedCompletion completion: News? -> ()) {
+    func findNews(withEventSource eventSource: EventSource, newReceivedCompletion completion: News? -> ()) {
         UserNewspaperSession.newspapersSuscribed().forEach{
             eventSource.addEventListener($0) { (id, event, data) in
                 completion(NewsRepository().createNewFromSSEEvent(id!, event: event!, data: data!))

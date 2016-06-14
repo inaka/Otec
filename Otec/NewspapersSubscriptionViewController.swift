@@ -18,14 +18,14 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newspaperSuscriptedIDs = UserNewspaperSession.newspapersSuscribed()
-        if self.checkIfComesFromFeed() {
+        if self.comesFromFeed() {
            self.navigationItem.rightBarButtonItem = nil
         }
 
         self.retrieveAndShowAllNewspapers()
     }
     
-    private func checkIfComesFromFeed() -> Bool {
+    private func comesFromFeed() -> Bool {
         var comesFromFeed = false
         
         self.navigationController?.viewControllers.forEach{
@@ -46,7 +46,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
                 }
             case .Failure(_):
                 dispatch_async(dispatch_get_main_queue()) {
-                    Util.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.", onViewController:self)
+                    self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again."	)
                 }
             }
         }

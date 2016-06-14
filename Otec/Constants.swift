@@ -12,5 +12,7 @@ struct Constants {
     static let NewspaperUserDefaultsKey = "userNewspaperID"
     static let NewspapersSuscribedDefaultsKey = "deviceNewspaperSuscribed"
     static let NewsFeedCellIdentifier = "newsCell"
+    static let NewsFeedCellClassName = "NewsTableViewCell"
     static let NewspapersSubscriptionCellIdentifier = "newspaperSubscriptionCell"
+    
 }

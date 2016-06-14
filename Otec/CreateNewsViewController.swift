@@ -20,7 +20,7 @@ class CreateNewsViewController: UIViewController {
     
     @IBAction func createNew(sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.newNameTextfield, self.newBodyTextView]) {
-            print ("name or description cannot be empty")
+            self.showAlertWithTitle("Error", message: "Title and body are requiered.")
             return
         }
         

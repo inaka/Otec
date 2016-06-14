@@ -26,7 +26,6 @@ class CreateNewspaperViewController: UIViewController {
     @IBAction func createNewspaper(sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.nameTextfield, self.descriptionTextView]) {
             self.showAlertWithTitle("Error", message: "Name and description are requiered.")
-            print ("name or description cannot be empty")
             return
         }
         
@@ -53,11 +52,9 @@ class CreateNewspaperViewController: UIViewController {
         var inputsAllValid = true
         
         textInputs.forEach {
-            print ("text \($0.hasValidText)")
             if !$0.hasValidText { inputsAllValid = false }
         }
         
         return inputsAllValid
     }
-    
 }

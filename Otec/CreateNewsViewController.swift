@@ -46,7 +46,7 @@ class CreateNewsViewController: UIViewController {
                                    "newspaper_name":UserNewspaperSession.userNewspaperName()]
         
         guard let new = try? News(dictionary:newDictionary) else {
-            Util.showAlertWithTitle("Error", message: "Something went wrong with the server response.", onViewController:self)
+            self.showAlertWithTitle("Error", message: "Something went wrong with the server response.")
             return
         }
         let future = NewsRepository().create(new)
@@ -55,7 +55,7 @@ class CreateNewsViewController: UIViewController {
             case .Success(_):
                     self.navigationController?.popViewControllerAnimated(true)
             case .Failure(_):
-                Util.showAlertWithTitle("Error", message: "A server error happened.", onViewController:self)
+                self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }
     }

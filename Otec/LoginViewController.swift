@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func checkIfHasSuscriptions() -> Bool {
+    private func deviceHasSuscriptions() -> Bool {
         return !UserNewspaperSession.newspapersSuscribed().isEmpty
     }
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
             switch result {
             case .Success(let newspaper):
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
-                    if self.checkIfHasSuscriptions() {
+                    if self.deviceHasSuscriptions() {
                         self.pushFeedsViewController(animated: true)
                     }else {
                         self.pushSuscriptionsViewController(animated: true)
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginAsGuestUser(sender: UIButton) {
         UserNewspaperSession.deleteUserNewspaper()
-        if self.checkIfHasSuscriptions() {
+        if self.deviceHasSuscriptions() {
             self.pushFeedsViewController(animated: true)
         }else {
             self.pushSuscriptionsViewController(animated: true)

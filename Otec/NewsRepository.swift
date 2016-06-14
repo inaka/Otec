@@ -18,7 +18,11 @@ class NewsRepository: CRUDRepository {
     func findNews(withEventSource eventSource: EventSource, newReceivedCompletion completion: News? -> ()) {
         UserNewspaperSession.newspapersSuscribed().forEach{
             eventSource.addEventListener($0) { (id, event, data) in
-                completion(NewsRepository().createNewFromSSEEvent(id!, event: event!, data: data!))
+                guard let new = try? NewsRepository().createNewFromSSEEvent(id!, event: event!, data: data!) else {
+                    completion (nil)
+                    return
+                }
+                completion(new)
             }
         }
     }
@@ -27,7 +31,7 @@ class NewsRepository: CRUDRepository {
         return EventSource(url: self.urlStringWithPath(self.name) , headers: ["Accept":"application/json"])
     }
     
-    private func createNewFromSSEEvent(id: String, event: String, data: String) -> News?{
+    private func createNewFromSSEEvent(id: String, event: String, data: String) throws -> News {
         let titleAndBodyOfNew = data.componentsSeparatedByString("\n")
         let title = titleAndBodyOfNew[0]
         let body = titleAndBodyOfNew[1]
@@ -37,8 +41,7 @@ class NewsRepository: CRUDRepository {
                              "id":id,
                              "newspaper_name":event]
         guard let new = try? News(dictionary:newDictionary) else {
-            print("error")
-            return nil
+            throw JaymeError.ParsingError
         }
         return new
     }

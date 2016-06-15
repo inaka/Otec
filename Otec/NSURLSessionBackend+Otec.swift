@@ -29,7 +29,7 @@ extension NSURLSessionBackend {
     static func otecBackend() -> NSURLSessionBackend {
         let httpHeaders = [HTTPHeader(field: "Accept", value: "application/json"),
                                                  HTTPHeader(field: "Content-Type", value: "application/json")]
-        let configuration = NSURLSessionBackendConfiguration(basePath:Constants.CanillitaBackendURL, httpHeaders:httpHeaders)
+        let configuration = NSURLSessionBackendConfiguration(basePath:Constants.CanillitaBackendLocalHostURL, httpHeaders:httpHeaders)
         return NSURLSessionBackend(configuration: configuration)
     }
 }

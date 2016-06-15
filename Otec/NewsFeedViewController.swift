@@ -76,6 +76,11 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
             alertController.addAction(pushCreateNewsAction)
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -85,7 +90,6 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewControllerWithIdentifier("newsDetailsViewController") as! NewsDetailsViewController
         viewController.new = self.news[indexPath.row]

@@ -10,6 +10,10 @@
 		564912881D11929300847447 /* NewsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564912871D11929300847447 /* NewsListener.swift */; };
 		564C9DBE1D01CDA800CEEB8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C9DBD1D01CDA800CEEB8C /* Constants.swift */; };
 		56763AE11D103D45008BF161 /* NSURLSessionBackend+Otec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */; };
+		56763AD51D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD41D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift */; };
+		56763AD71D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD61D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift */; };
+		56763AD91D0F4142008BF161 /* NewspaperNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD81D0F4142008BF161 /* NewspaperNewsListViewController.swift */; };
+		56763ADF1D0F5B57008BF161 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56763ADD1D0F5B57008BF161 /* NewsTableViewCell.xib */; };
 		5698541A1D020AE5001B0F0F /* TextValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569854191D020AE5001B0F0F /* TextValidations.swift */; };
 		56B689801D05B33B008D0320 /* UserNewspaperSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6897F1D05B33B008D0320 /* UserNewspaperSession.swift */; };
 		56B689861D05FB7C008D0320 /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B689851D05FB7C008D0320 /* NewsDataSource.swift */; };
@@ -56,6 +60,10 @@
 		564912871D11929300847447 /* NewsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListener.swift; sourceTree = "<group>"; };
 		564C9DBD1D01CDA800CEEB8C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSessionBackend+Otec.swift"; sourceTree = "<group>"; };
+		56763AD41D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperSubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		56763AD61D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperSubscriptionDataSource.swift; sourceTree = "<group>"; };
+		56763AD81D0F4142008BF161 /* NewspaperNewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperNewsListViewController.swift; sourceTree = "<group>"; };
+		56763ADD1D0F5B57008BF161 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		569854191D020AE5001B0F0F /* TextValidations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextValidations.swift; sourceTree = "<group>"; };
 		56B6897F1D05B33B008D0320 /* UserNewspaperSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNewspaperSession.swift; sourceTree = "<group>"; };
 		56B689851D05FB7C008D0320 /* NewsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
@@ -170,15 +178,19 @@
 				56E1FD441CEDF74C001FC8A4 /* Server Connection */,
 				569854181D020AC7001B0F0F /* Utilities */,
 				56BB7A5E1CE360590095045C /* AppDelegate.swift */,
+				56763AD81D0F4142008BF161 /* NewspaperNewsListViewController.swift */,
 				56BB7A601CE360590095045C /* NewsFeedViewController.swift */,
 				56B689871D06103E008D0320 /* NewsTableViewCell.swift */,
+				56763AD41D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift */,
 				56B689851D05FB7C008D0320 /* NewsDataSource.swift */,
 				56E34B5B1D085E5900C48914 /* CreateNewsViewController.swift */,
 				56E34B611D09D6B900C48914 /* NewsDetailsViewController.swift */,
 				56BB7A621CE360590095045C /* Main.storyboard */,
 				56BB7A8C1CE375170095045C /* LoginViewController.swift */,
 				56BB7A8E1CE39A180095045C /* CreateNewspaperViewController.swift */,
+				56763ADD1D0F5B57008BF161 /* NewsTableViewCell.xib */,
 				56E34B5D1D088A0700C48914 /* NewspapersSubscriptionViewController.swift */,
+				56763AD61D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift */,
 				56BB7A651CE360590095045C /* Assets.xcassets */,
 				56BB7A671CE360590095045C /* LaunchScreen.storyboard */,
 				56BB7A6A1CE360590095045C /* Info.plist */,
@@ -331,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56763ADF1D0F5B57008BF161 /* NewsTableViewCell.xib in Resources */,
 				56BB7A691CE360590095045C /* LaunchScreen.storyboard in Resources */,
 				56BB7A661CE360590095045C /* Assets.xcassets in Resources */,
 				56BB7A641CE360590095045C /* Main.storyboard in Resources */,
@@ -407,13 +420,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BB7A8D1CE375170095045C /* LoginViewController.swift in Sources */,
+				56763AD91D0F4142008BF161 /* NewspaperNewsListViewController.swift in Sources */,
 				56E1FD491CEE00FB001FC8A4 /* Newspaper.swift in Sources */,
 				56BB72241CF4CC5A000A7006 /* NewspaperRepository.swift in Sources */,
 				56E34B601D08918300C48914 /* UIViewController+ErrorAlert.swift in Sources */,
 				5698541A1D020AE5001B0F0F /* TextValidations.swift in Sources */,
 				56B689881D06103E008D0320 /* NewsTableViewCell.swift in Sources */,
+				56763AD51D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift in Sources */,
 				56E34B621D09D6B900C48914 /* NewsDetailsViewController.swift in Sources */,
 				56763AE11D103D45008BF161 /* NSURLSessionBackend+Otec.swift in Sources */,
+				56763AD71D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift in Sources */,
 				56BB7A611CE360590095045C /* NewsFeedViewController.swift in Sources */,
 				564912881D11929300847447 /* NewsListener.swift in Sources */,
 				56BB72221CF4A8EF000A7006 /* NewsRepository.swift in Sources */,

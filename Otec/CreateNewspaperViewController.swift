@@ -42,7 +42,6 @@ class CreateNewspaperViewController: UIViewController {
     @IBAction func createNewspaper(sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.nameTextfield, self.descriptionTextView]) {
             self.showAlertWithTitle("Error", message: "Name and description are requiered.")
-            print ("name or description cannot be empty")
             return
         }
         
@@ -57,14 +56,10 @@ class CreateNewspaperViewController: UIViewController {
         future.start() { result in
             switch result {
             case .Success(let newspaper):
-                dispatch_async(dispatch_get_main_queue()) {
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
                     self.pushFeedsViewController(animated: true)
-                }
             case .Failure(_):
-                dispatch_async(dispatch_get_main_queue()) {
                     self.showAlertWithTitle("Error", message: "A server error happened.")
-                }
             }
         }
     }
@@ -73,11 +68,9 @@ class CreateNewspaperViewController: UIViewController {
         var inputsAllValid = true
         
         textInputs.forEach {
-            print ("text \($0.hasValidText)")
             if !$0.hasValidText { inputsAllValid = false }
         }
         
         return inputsAllValid
     }
-    
 }

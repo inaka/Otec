@@ -13,7 +13,7 @@ extension UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { (action) in
-            alertController.dismissViewControllerAnimated(false, completion: nil)
+            alertController.dismissViewControllerAnimated(true, completion: nil)
         }
         alertController.addAction(cancelAction)
         

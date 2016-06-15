@@ -36,7 +36,7 @@ class CreateNewsViewController: UIViewController {
     
     @IBAction func createNew(sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.newNameTextfield, self.newBodyTextView]) {
-            print ("name or description cannot be empty")
+            self.showAlertWithTitle("Error", message: "Title and body are requiered.")
             return
         }
         
@@ -46,18 +46,16 @@ class CreateNewsViewController: UIViewController {
                                    "newspaper_name":UserNewspaperSession.userNewspaperName()]
         
         guard let new = try? News(dictionary:newDictionary) else {
-            print("error")
+            self.showAlertWithTitle("Error", message: "Something went wrong with the server response.")
             return
         }
         let future = NewsRepository().create(new)
         future.start() { result in
             switch result {
             case .Success(_):
-                dispatch_async(dispatch_get_main_queue()) {
                     self.navigationController?.popViewControllerAnimated(true)
-                }
-            case .Failure(let error):
-                print ("error : \(error)")
+            case .Failure(_):
+                self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }
     }

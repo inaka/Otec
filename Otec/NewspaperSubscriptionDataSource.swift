@@ -1,5 +1,5 @@
 //
-//  NewsDataSource.swift
+//  NewspaperSubscriptionDataSource.swift
 //  Otec
 //
 // Copyright (c) 2016 Inaka - http://inaka.net/
@@ -24,27 +24,34 @@
 
 import UIKit
 
-class NewsDataSource: NSObject, UITableViewDataSource {
+class NewspaperSubscriptionDataSource: NSObject, UITableViewDataSource {
+
+    private let newspapers: [Newspaper]
+    private let newspapersSubscribedIDs: [String]
     
-    let news : [News]
-    
-    init(news: [News]){
-        self.news = news
+    init(newspapers: [Newspaper], newspaperSubscribedIDs subscriptionsIDs: [String]){
+        self.newspapers = newspapers
+        self.newspapersSubscribedIDs = subscriptionsIDs
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.news.count
+        return self.newspapers.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.NewsFeedCellIdentifier) as? NewsTableViewCell {
-            cell.news = self.news[indexPath.row]
+        let newspaper = self.newspapers[indexPath.row]
+        if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.NewspapersSubscriptionCellIdentifier) as? NewspaperSubscriptionTableViewCell {
+            cell.newspaper = newspaper
+            cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil).first as! NewsTableViewCell
-        cell.news = self.news[indexPath.row]
+        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil).first as! NewspaperSubscriptionTableViewCell
+        cell.newspaper = newspaper
+        cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None        
         return cell
     }
     
+    private func newspaperIsSubscribed(newspaper: Newspaper, newspapersSubscribedIDs subscriptionsIDs: [String]) -> Bool {
+        return subscriptionsIDs.contains(newspaper.id)
+    }
 }

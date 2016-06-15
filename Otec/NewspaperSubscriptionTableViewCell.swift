@@ -1,5 +1,5 @@
 //
-//  News.swift
+//  NewspaperSubscriptionTableViewCell.swift
 //  Otec
 //
 // Copyright (c) 2016 Inaka - http://inaka.net/
@@ -22,40 +22,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
-import Jayme
-import SwiftyJSON
+import UIKit
 
-struct News: Identifiable {
-    let id: String
-    let title : String
-    let body : String
-    let newspaper : String
-}
+class NewspaperSubscriptionTableViewCell: UITableViewCell {
+    @IBOutlet weak var newspaperNameLabel: UILabel!
+    @IBOutlet weak var newspaperDescriptionLabel: UILabel!
 
-extension News: DictionaryInitializable, DictionaryRepresentable {
-    
-    init(dictionary: [String: AnyObject]) throws {
-        let json = JSON(dictionary)
-        guard let
-            id = json["id"].string,
-            title = json["title"].string,
-            body = json["body"].string,
-            newspaper = json["newspaper_name"].string
-            else {  throw JaymeError.ParsingError }
-        self.id = id
-        self.title = title
-        self.body = body
-        self.newspaper = newspaper
+    var newspaper : Newspaper! {
+        didSet {
+            self.newspaperNameLabel.text = newspaper.id
+            self.newspaperDescriptionLabel.text = newspaper.newspaperDescription
+        }
     }
-
-    var dictionaryValue: [String: AnyObject] {
-        return [
-            "id": self.id,
-            "title": self.title,
-            "body": self.body,
-            "newspaper": self.newspaper
-        ]
-    }
-    
 }

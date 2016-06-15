@@ -32,8 +32,14 @@ class NewsListener {
     
     func listenToNewsWithEventSource(eventSource: EventSource, newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
         UserNewspaperSession.newspapersSubscribed().forEach{
-            eventSource.addEventListener($0) { (id, event, data) in
-                guard let new = try? self.createNewFromSSEEvent(id!, event: event!, data: data!) else {
+            eventSource.addEventListener($0) { (esId, esEvent, esData) in
+                guard let id = esId,
+                    let event = esEvent,
+                    let data =  esData else {
+                        completion (Result.Failure(JaymeError.BadResponse))
+                        return
+                }
+                guard let new = try? self.createNewFromSSEEvent(id, event: event, data: data) else {
                     completion (Result.Failure(JaymeError.ParsingError))
                     return
                 }
@@ -66,8 +72,14 @@ class NewsListener {
     }
     
     func listenToNewsPaper(newspaperId: String, newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
-        self.newsEventSource().addEventListener(newspaperId) { (id, event, data) in
-            guard let new = try? self.createNewFromSSEEvent(id!, event: event!, data: data!) else {
+        self.newsEventSource().addEventListener(newspaperId) { (esId, esEvent, esData) in
+            guard let id = esId,
+                let event = esEvent,
+                let data =  esData else {
+                    completion (Result.Failure(JaymeError.BadResponse))
+                    return
+            }
+            guard let new = try? self.createNewFromSSEEvent(id, event: event, data: data) else {
                 completion (Result.Failure(JaymeError.ParsingError))
                 return
             }

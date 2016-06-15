@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="122" id="21A-7Q-oeJ" customClass="NewsTableViewCell" customModule="Otec" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="122" id="21A-7Q-oeJ" customClass="NewsTableViewCell" customModule="Otec" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="122"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="21A-7Q-oeJ" id="pc9-sP-GbS">
@@ -63,8 +63,8 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="i5I-9a-JM8"/>
                         <exclude reference="3S3-ze-CCM"/>
+                        <exclude reference="i5I-9a-JM8"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

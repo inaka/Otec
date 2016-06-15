@@ -41,7 +41,7 @@ class NewsDetailsViewController: UIViewController {
     }
     
     func showNewspaperNewsList(gesture: UITapGestureRecognizer) {
-        let future = NewspaperRepository().findByID(UserNewspaperSession.userNewspaperName())
+        let future = NewspaperRepository().findByID(self.new.newspaper)
         
         future.start { result in
             switch result {

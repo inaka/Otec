@@ -60,7 +60,7 @@ class NewsRepository: CRUDRepository {
     }
     
     private func urlStringWithPath(path: String) -> String {
-        return "http://43e9c7c6.ngrok.io" + "/" + path
+        return Constants.CanillitaBackendURL + "/" + path
     }
     
 }

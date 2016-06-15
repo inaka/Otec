@@ -28,7 +28,7 @@ class NewspaperSubscriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var newspaperNameLabel: UILabel!
     @IBOutlet weak var newspaperDescriptionLabel: UILabel!
 
-    var newspaper : Newspaper! {
+    var newspaper: Newspaper! {
         didSet {
             self.newspaperNameLabel.text = newspaper.id
             self.newspaperDescriptionLabel.text = newspaper.newspaperDescription

@@ -96,4 +96,3 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
-

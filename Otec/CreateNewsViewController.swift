@@ -60,7 +60,7 @@ class CreateNewsViewController: UIViewController {
         }
     }
     
-    private func haveValidTexts(textInputs: [TextValidable]) -> Bool{
+    private func haveValidTexts(textInputs: [TextValidable]) -> Bool {
         var inputsAllValid = true
         
         textInputs.forEach {

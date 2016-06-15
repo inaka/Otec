@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		564912881D11929300847447 /* NewsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564912871D11929300847447 /* NewsListener.swift */; };
 		564C9DBE1D01CDA800CEEB8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C9DBD1D01CDA800CEEB8C /* Constants.swift */; };
-		56763AE11D103D45008BF161 /* NSURLSessionBackend+Otec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */; };
 		56763AD51D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD41D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift */; };
 		56763AD71D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD61D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift */; };
 		56763AD91D0F4142008BF161 /* NewspaperNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AD81D0F4142008BF161 /* NewspaperNewsListViewController.swift */; };
 		56763ADF1D0F5B57008BF161 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56763ADD1D0F5B57008BF161 /* NewsTableViewCell.xib */; };
+		56763AE11D103D45008BF161 /* NSURLSessionBackend+Otec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */; };
 		5698541A1D020AE5001B0F0F /* TextValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569854191D020AE5001B0F0F /* TextValidations.swift */; };
 		56B689801D05B33B008D0320 /* UserNewspaperSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6897F1D05B33B008D0320 /* UserNewspaperSession.swift */; };
 		56B689861D05FB7C008D0320 /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B689851D05FB7C008D0320 /* NewsDataSource.swift */; };
@@ -59,11 +59,11 @@
 		349A20B16E0E71922744B162 /* Pods-Otec.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otec.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Otec/Pods-Otec.debug.xcconfig"; sourceTree = "<group>"; };
 		564912871D11929300847447 /* NewsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListener.swift; sourceTree = "<group>"; };
 		564C9DBD1D01CDA800CEEB8C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSessionBackend+Otec.swift"; sourceTree = "<group>"; };
 		56763AD41D0F1B1D008BF161 /* NewspaperSubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperSubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		56763AD61D0F2D08008BF161 /* NewspaperSubscriptionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperSubscriptionDataSource.swift; sourceTree = "<group>"; };
 		56763AD81D0F4142008BF161 /* NewspaperNewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewspaperNewsListViewController.swift; sourceTree = "<group>"; };
 		56763ADD1D0F5B57008BF161 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		56763AE01D103D45008BF161 /* NSURLSessionBackend+Otec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSessionBackend+Otec.swift"; sourceTree = "<group>"; };
 		569854191D020AE5001B0F0F /* TextValidations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextValidations.swift; sourceTree = "<group>"; };
 		56B6897F1D05B33B008D0320 /* UserNewspaperSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNewspaperSession.swift; sourceTree = "<group>"; };
 		56B689851D05FB7C008D0320 /* NewsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
@@ -249,6 +249,7 @@
 				56BB7A591CE360590095045C /* Resources */,
 				6883C2B5DB3FE3DC47603EC3 /* 📦 Embed Pods Frameworks */,
 				32F6340EDDA40536D228B47E /* 📦 Copy Pods Resources */,
+				562757601D11EB8400ED09C8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,6 +382,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		562757601D11EB8400ED09C8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		6883C2B5DB3FE3DC47603EC3 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

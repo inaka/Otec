@@ -31,7 +31,7 @@ class NewsListener {
     let name = "news"
     
     func listenToNewsWithEventSource(eventSource: EventSource, newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
-        UserNewspaperSession.newspapersSubscribed().forEach{
+        UserNewspaperSession.newspapersSubscribed().forEach {
             eventSource.addEventListener($0) { (esId, esEvent, esData) in
                 guard let id = esId,
                     let event = esEvent,
@@ -49,7 +49,7 @@ class NewsListener {
     }
     
     func newsEventSource() -> EventSource {
-        return EventSource(url: self.urlStringWithPath(self.name) , headers: ["Accept":"application/json"])
+        return EventSource(url: self.urlStringWithPath(self.name), headers: ["Accept":"application/json"])
     }
     
     private func urlStringWithPath(path: String) -> String {

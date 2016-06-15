@@ -26,9 +26,9 @@ import UIKit
 
 class NewsDataSource: NSObject, UITableViewDataSource {
     
-    let news : [News]
+    let news: [News]
     
-    init(news: [News]){
+    init(news: [News]) {
         self.news = news
     }
     

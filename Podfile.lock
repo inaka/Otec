@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Jayme:
-    :commit: 111bb66c345321312af0d4a9bf79b64575cb9af8
+    :commit: f256145a7799dc2af183219c17dcf5e9170556af
     :git: git@github.com:inaka/Jayme.git
 
 SPEC CHECKSUMS:

@@ -12,7 +12,7 @@ import IKEventSource
 class NewsRepository: CRUDRepository {
     
     typealias EntityType = News
-    let backend = NSURLSessionBackend()
+    let backend = NSURLSessionBackend.otecBackend()
     let name = "news"
     
     func findNews(withEventSource eventSource: EventSource, newReceivedCompletion completion: News? -> ()) {

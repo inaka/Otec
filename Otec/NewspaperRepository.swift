@@ -11,7 +11,7 @@ import Jayme
 class NewspaperRepository: CRUDRepository {
     
     typealias EntityType = Newspaper
-    let backend = NSURLSessionBackend()
+    let backend = NSURLSessionBackend.otecBackend()
     let name = "newspapers"
     
     func create(entity: EntityType) -> Future<EntityType, JaymeError> {

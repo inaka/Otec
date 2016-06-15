@@ -64,4 +64,14 @@ class NewsListener {
         }
         return new
     }
+    
+    func listenToNewsPaper(newspaperId: String, newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
+        self.newsEventSource().addEventListener(newspaperId) { (id, event, data) in
+            guard let new = try? self.createNewFromSSEEvent(id!, event: event!, data: data!) else {
+                completion (Result.Failure(JaymeError.ParsingError))
+                return
+            }
+            completion(Result.Success(new))
+        }
+    }
 }

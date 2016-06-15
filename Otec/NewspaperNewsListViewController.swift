@@ -21,13 +21,17 @@ class NewspaperNewsListViewController: UIViewController, UITableViewDelegate {
     }
     
     private func retrieveNewsFromServer() {
-//        NewsRepository().findByID(self.newspaper.id){ responseNew in
-//            guard let new = responseNew else { return }
-//            self.news.append(new)
-//            self.dataSource = NewsDataSource(news: self.news)
-//            self.tableView.dataSource = self.dataSource
-//            self.tableView.reloadData()
-//        }
+        NewsListener().listenToNewsPaper(self.newspaper.id){ responseNew in
+            switch responseNew {
+            case .Failure(_):
+                self.showAlertWithTitle("Error", message: "Server response corrupted.")
+            case .Success(let new):
+                self.news.append(new)
+                self.dataSource = NewsDataSource(news: self.news)
+                self.tableView.dataSource = self.dataSource
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

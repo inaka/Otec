@@ -26,15 +26,15 @@ struct UserNewspaperSession {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(Constants.NewspaperUserDefaultsKey)
     }
     
-    static func newspapersSuscribed() -> [String] {
+    static func newspapersSubscribed() -> [String] {
         
-        let suscriptions = NSUserDefaults.standardUserDefaults().objectForKey(Constants.NewspapersSuscribedDefaultsKey) as? [String] ?? [String]()
+        let subscriptions = NSUserDefaults.standardUserDefaults().objectForKey(Constants.NewspapersSubscribedDefaultsKey) as? [String] ?? [String]()
         
-        return suscriptions
+        return subscriptions
     }
     
-    static func saveNewspapersSuscription(newspapersSuscribed: [String]) {
-        NSUserDefaults.standardUserDefaults().setObject(newspapersSuscribed, forKey:Constants.NewspapersSuscribedDefaultsKey)
+    static func saveNewspapersSubscription(newspapersSubscribed: [String]) {
+        NSUserDefaults.standardUserDefaults().setObject(newspapersSubscribed, forKey:Constants.NewspapersSubscribedDefaultsKey)
     }
     
 }

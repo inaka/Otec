@@ -2,9 +2,25 @@
 //  NewspapersSubscriptionViewController.swift
 //  Otec
 //
-//  Created by El gera de la gente on 6/8/16.
-//  Copyright © 2016 Inaka. All rights reserved.
+// Copyright (c) 2016 Inaka - http://inaka.net/
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import UIKit
 
@@ -12,12 +28,12 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
 
     @IBOutlet weak var tableView: UITableView!
     
-    var newspaperSuscriptedIDs = UserNewspaperSession.newspapersSuscribed()
+    var newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
     var allNewspapers = [Newspaper]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.newspaperSuscriptedIDs = UserNewspaperSession.newspapersSuscribed()
+        self.newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
         if self.comesFromFeed() {
            self.navigationItem.rightBarButtonItem = nil
         }
@@ -61,13 +77,13 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
             cell.textLabel!.text = newspaper.id
-            cell.accessoryType = self.newspaperSuscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
+            cell.accessoryType = self.newspaperSubscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
             return cell
         }
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         cell.textLabel!.text = newspaper.id
-        cell.accessoryType = self.newspaperSuscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
+        cell.accessoryType = self.newspaperSubscriptedIDs.contains(newspaper.id) ? .Checkmark : .None
         return cell
     }
     
@@ -75,13 +91,13 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         
         let newspaper = self.allNewspapers[indexPath.row]
         
-        if self.newspaperSuscriptedIDs.contains(newspaper.id) {
-            self.newspaperSuscriptedIDs = self.newspaperSuscriptedIDs.filter { $0 != newspaper.id }
+        if self.newspaperSubscriptedIDs.contains(newspaper.id) {
+            self.newspaperSubscriptedIDs = self.newspaperSubscriptedIDs.filter { $0 != newspaper.id }
         }else {
-            self.newspaperSuscriptedIDs.append(newspaper.id)
+            self.newspaperSubscriptedIDs.append(newspaper.id)
         }
         
-        UserNewspaperSession.saveNewspapersSuscription(self.newspaperSuscriptedIDs)
+        UserNewspaperSession.saveNewspapersSubscription(self.newspaperSubscriptedIDs)
         
         self.tableView.reloadData()
     }

@@ -299,7 +299,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
             </objects>
             <point key="canvasLocation" x="1360" y="431"/>
         </scene>
-        <!--Suscriptions-->
+        <!--Subscriptions-->
         <scene sceneID="aAA-el-2gF">
             <objects>
                 <viewController storyboardIdentifier="NewspapersSubscriptionViewController" id="qWT-Bq-cAE" customClass="NewspapersSubscriptionViewController" customModule="Otec" customModuleProvider="target" sceneMemberID="viewController">
@@ -328,7 +328,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                             <constraint firstAttribute="trailing" secondItem="1TQ-Kz-LT1" secondAttribute="trailing" id="jBU-FK-o8D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Suscriptions" id="oOd-qt-GV3">
+                    <navigationItem key="navigationItem" title="Subscriptions" id="oOd-qt-GV3">
                         <barButtonItem key="rightBarButtonItem" title="Go to feeds" id="Nu3-Ft-JF6">
                             <connections>
                                 <segue destination="k45-ix-U0Z" kind="show" id="H8V-3o-0DR"/>

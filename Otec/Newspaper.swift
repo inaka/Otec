@@ -28,8 +28,7 @@ import SwiftyJSON
 
 struct Newspaper: Identifiable {
     let id: String
-    let news: [News]
-    let description : String
+    let newspaperDescription : String
 }
 
 extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
@@ -41,22 +40,15 @@ extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
             description = json["description"].string
             else { throw JaymeError.ParsingError }
         self.id = id
-        self.description = description
-        self.news = [News]()//Newspaper.newsFromDictionary(["":""])
-    }
-    
-    private static func newsFromDictionary (news: [JSON]) -> [News]{
-        
-        return [News]()
+        self.newspaperDescription = description
     }
     
     var dictionaryValue: [String: AnyObject] {
         return [
             "name": self.id,
-            "description": self.description
+            "description": self.newspaperDescription
         ]
     }
-    
 }
 
 extension String: CustomStringConvertible { public var description: String { return self } }

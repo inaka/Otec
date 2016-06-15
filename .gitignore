@@ -6,8 +6,8 @@
 build/
 DerivedData
 .DS_Store
-/Otec-iOS/Pods/*
-/Otec-iOS/Pods
+/Pods/*
+/Pods
 ./Otec-iOS/.DS_Store
 
 ## Various settings

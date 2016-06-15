@@ -76,6 +76,11 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
             alertController.addAction(pushCreateNewsAction)
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            alertController.dismissViewControllerAnimated(false, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     

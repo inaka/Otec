@@ -57,7 +57,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         future.start() { result in
             switch result {
             case .Success(let newspapers):
-                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSuscriptedIDs)
+                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSubscriptedIDs)
                 self.allNewspapers = newspapers
                 self.tableView.dataSource = self.dataSource
                 self.tableView.reloadData()
@@ -79,7 +79,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         
         UserNewspaperSession.saveNewspapersSubscription(self.newspaperSubscriptedIDs)
         
-        self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSuscriptedIDs)
+        self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSubscriptedIDs)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
     }

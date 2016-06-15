@@ -31,7 +31,6 @@ struct News: Identifiable {
     let title : String
     let body : String
     let newspaper : String
-    let creationDate : NSDate
 }
 
 extension News: DictionaryInitializable, DictionaryRepresentable {
@@ -42,23 +41,14 @@ extension News: DictionaryInitializable, DictionaryRepresentable {
             id = json["id"].string,
             title = json["title"].string,
             body = json["body"].string,
-            newspaper = json["newspaper_name"].string,
-            createdAt = News.creationDateFromDateString(json["created_at"].string)
+            newspaper = json["newspaper_name"].string
             else {  throw JaymeError.ParsingError }
         self.id = id
         self.title = title
         self.body = body
         self.newspaper = newspaper
-        self.creationDate = createdAt
     }
-        
-    private static func creationDateFromDateString(dateString: String?) -> NSDate? {
-        return NSDate()
-        
-    }
-    private func dateStringFromCreationDate(date: NSDate) -> String {
-        return "12/19/1989"
-    }
+
     var dictionaryValue: [String: AnyObject] {
         return [
             "id": self.id,

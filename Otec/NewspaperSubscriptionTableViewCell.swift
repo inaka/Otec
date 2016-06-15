@@ -31,7 +31,7 @@ class NewspaperSubscriptionTableViewCell: UITableViewCell {
     var newspaper : Newspaper! {
         didSet {
             self.newspaperNameLabel.text = newspaper.id
-            self.newspaperDescriptionLabel.text = newspaper.description
+            self.newspaperDescriptionLabel.text = newspaper.newspaperDescription
         }
     }
 }

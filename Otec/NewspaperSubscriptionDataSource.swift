@@ -29,7 +29,7 @@ class NewspaperSubscriptionDataSource: NSObject, UITableViewDataSource {
     private let newspapers: [Newspaper]
     private let newspapersSubscribedIDs: [String]
     
-    init(newspapers: [Newspaper], newspaperSubscribedIDs subscriptionsIDs: [String]){
+    init(newspapers: [Newspaper], newspaperSubscribedIDs subscriptionsIDs: [String]) {
         self.newspapers = newspapers
         self.newspapersSubscribedIDs = subscriptionsIDs
     }

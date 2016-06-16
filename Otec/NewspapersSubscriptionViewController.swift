@@ -45,7 +45,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
     private func comesFromFeed() -> Bool {
         var comesFromFeed = false
         
-        self.navigationController?.viewControllers.forEach{
+        self.navigationController?.viewControllers.forEach {
             if $0.isKindOfClass(NewsFeedViewController) { comesFromFeed = true }
         }
         return comesFromFeed

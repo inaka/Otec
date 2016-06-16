@@ -28,7 +28,7 @@ import SwiftyJSON
 
 struct Newspaper: Identifiable {
     let id: String
-    let newspaperDescription : String
+    let newspaperDescription: String
 }
 
 extension Newspaper: DictionaryInitializable, DictionaryRepresentable {

@@ -30,7 +30,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newspaperNameLabel: UILabel!
     
-    var news : News! {
+    var news: News! {
         didSet {
             newspaperNameLabel.text = "by \(news.newspaper)"
             newsTitleLabel.text = news.title

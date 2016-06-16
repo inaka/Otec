@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     }
 
     private func checkIfLoggedInThenShowFeed() {
-        if (UserNewspaperSession.isUserLoggedIn()) {
+        if UserNewspaperSession.isUserLoggedIn() {
             self.pushFeedsViewController(animated: false)
         }
     }
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
         }
     }
  
-    private func haveValidTexts(textInputs: [TextValidable]) -> Bool{
+    private func haveValidTexts(textInputs: [TextValidable]) -> Bool {
         var inputsAllValid = true
         
         textInputs.forEach { if !$0.hasValidText { inputsAllValid = false } }

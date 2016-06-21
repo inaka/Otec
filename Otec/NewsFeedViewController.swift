@@ -41,7 +41,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
     }
     
     private func retrieveNewsFromServer() {
-        NewsListener().listenToNewsWithEventSource(self.eventSource, forNewspapersIDs: UserNewspaperSession.newspapersSubscribed()) { responseNew in
+        NewsListener().listenToNewsWithEventSource(self.eventSource, forNewspapersIDs: UserNewspaperSession.newspapersSubscribedIDs()) { responseNew in
             switch responseNew {
             case .Failure(_):
                 self.showAlertWithTitle("Error", message: "Server response corrupted.")

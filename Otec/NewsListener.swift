@@ -30,7 +30,7 @@ class NewsListener {
     
     let name = "news"
     
-    func listenToNewsWithEventSource(eventSource: EventSource, forNewspapersIDs newspapersIDs:[String], newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
+    func listenToNewsWithEventSource(eventSource: EventSource, forNewspapersIDs newspapersIDs: [String], newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
         newspapersIDs.forEach {
             eventSource.addEventListener($0) { (esId, esEvent, esData) in
                 guard let id = esId,

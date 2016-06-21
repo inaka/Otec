@@ -28,13 +28,13 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
 
     @IBOutlet weak var tableView: UITableView!
     
-    var newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
+    var newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribedIDs()
     var allNewspapers = [Newspaper]()
     var dataSource = NewspaperSubscriptionDataSource(newspapers: [Newspaper](), newspaperSubscribedIDs: [String]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
+        self.newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribedIDs()
         if self.comesFromFeed() {
            self.navigationItem.rightBarButtonItem = nil
         }
@@ -77,7 +77,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
             self.newspaperSubscriptedIDs.append(newspaper.id)
         }
         
-        UserNewspaperSession.saveNewspapersSubscription(self.newspaperSubscriptedIDs)
+        UserNewspaperSession.saveNewspapersIDsSubscription(self.newspaperSubscriptedIDs)
         
         self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSubscriptedIDs)
         self.tableView.dataSource = self.dataSource

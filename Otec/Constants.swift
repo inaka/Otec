@@ -25,10 +25,10 @@
 import Foundation
 
 struct Constants {
-    static let CanillitaBackendURL = "http://43e9c7c6.ngrok.io"
+    static let CanillitaBackendURL = "http://978c4c8e.ngrok.io"
     static let CanillitaBackendLocalHostURL = "http://localhost:4892"
     static let NewspaperUserDefaultsKey = "UserNewspaperID"
-    static let NewspapersSubscribedDefaultsKey = "DeviceNewspaperSubscribed"
+    static let NewspapersSubscribedIDsDefaultsKey = "DeviceNewspaperSubscribed"
     static let NewsFeedCellIdentifier = "NewsCell"
     static let NewsFeedCellClassName = "NewsTableViewCell"
     static let NewspapersSubscriptionCellIdentifier = "NewspaperSubscriptionCell"

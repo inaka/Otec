@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     }
     
     private func deviceHasSubscriptions() -> Bool {
-        return !UserNewspaperSession.newspapersSubscribed().isEmpty
+        return !UserNewspaperSession.newspapersSubscribedIDs().isEmpty
     }
     
     private func pushSubscriptionsViewController(animated animated: Bool) {

@@ -28,13 +28,13 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
 
     @IBOutlet weak var tableView: UITableView!
     
-    var newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
+    var newspaperSubscribedIDs = UserNewspaperSession.newspapersSubscribedIDs()
     var allNewspapers = [Newspaper]()
     var dataSource = NewspaperSubscriptionDataSource(newspapers: [Newspaper](), newspaperSubscribedIDs: [String]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.newspaperSubscriptedIDs = UserNewspaperSession.newspapersSubscribed()
+        self.newspaperSubscribedIDs = UserNewspaperSession.newspapersSubscribedIDs()
         if self.comesFromFeed() {
            self.navigationItem.rightBarButtonItem = nil
         }
@@ -57,7 +57,7 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         future.start() { result in
             switch result {
             case .Success(let newspapers):
-                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSubscriptedIDs)
+                self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSubscribedIDs)
                 self.allNewspapers = newspapers
                 self.tableView.dataSource = self.dataSource
                 self.tableView.reloadData()
@@ -71,15 +71,15 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         
         let newspaper = self.allNewspapers[indexPath.row]
         
-        if self.newspaperSubscriptedIDs.contains(newspaper.id) {
-            self.newspaperSubscriptedIDs = self.newspaperSubscriptedIDs.filter { $0 != newspaper.id }
+        if self.newspaperSubscribedIDs.contains(newspaper.id) {
+            self.newspaperSubscribedIDs = self.newspaperSubscribedIDs.filter { $0 != newspaper.id }
         }else {
-            self.newspaperSubscriptedIDs.append(newspaper.id)
+            self.newspaperSubscribedIDs.append(newspaper.id)
         }
         
-        UserNewspaperSession.saveNewspapersSubscription(self.newspaperSubscriptedIDs)
+        UserNewspaperSession.saveNewspapersIDsSubscription(self.newspaperSubscribedIDs)
         
-        self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSubscriptedIDs)
+        self.dataSource = NewspaperSubscriptionDataSource(newspapers: self.allNewspapers, newspaperSubscribedIDs: self.newspaperSubscribedIDs)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
     }

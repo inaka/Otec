@@ -29,19 +29,10 @@ class NewsRepository: CRUDRepository {
     
     typealias EntityType = News
     let backend = NSURLSessionBackend.otecBackend()
-    let name = "news"
-    
-    func create(entity: EntityType) -> Future<EntityType, JaymeError> {
-        let path = "newspapers"
-        return self.backend.futureForPath(urlStringToCreateNewWithPath(path), method: .POST, parameters: entity.dictionaryValue)
-            .andThen { DataParser().dictionaryFromData($0.0) }
-            .andThen { EntityParser().entityFromDictionary($0) }
-    }
-    
-    private func urlStringToCreateNewWithPath(path: String) -> String {
+    var name: String {
         let userNewspaper = UserNewspaperSession.userNewspaperName()
         
-        return path + "/" + userNewspaper + "/news"
+        return "newspapers" + "/" + userNewspaper + "/news"
     }
     
 }

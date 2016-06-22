@@ -30,10 +30,4 @@ class NewspaperRepository: CRUDRepository {
     let backend = NSURLSessionBackend.otecBackend()
     let name = "newspapers"
     
-    func create(entity: EntityType) -> Future<EntityType, JaymeError> {
-        let path = self.name
-        return self.backend.futureForPath(path, method: .POST, parameters: entity.dictionaryValue)
-            .andThen { DataParser().dictionaryFromData($0.0) }
-            .andThen { EntityParser().entityFromDictionary($0) }
-    }
 }

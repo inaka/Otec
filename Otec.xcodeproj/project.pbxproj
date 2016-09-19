@@ -243,12 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56BB7A831CE360590095045C /* Build configuration list for PBXNativeTarget "Otec" */;
 			buildPhases = (
-				E28EC0EB25F4CD243F9B782B /* 📦 Check Pods Manifest.lock */,
+				E28EC0EB25F4CD243F9B782B /* [CP] Check Pods Manifest.lock */,
 				56BB7A571CE360590095045C /* Sources */,
 				56BB7A581CE360590095045C /* Frameworks */,
 				56BB7A591CE360590095045C /* Resources */,
-				6883C2B5DB3FE3DC47603EC3 /* 📦 Embed Pods Frameworks */,
-				32F6340EDDA40536D228B47E /* 📦 Copy Pods Resources */,
+				6883C2B5DB3FE3DC47603EC3 /* [CP] Embed Pods Frameworks */,
+				32F6340EDDA40536D228B47E /* [CP] Copy Pods Resources */,
 				562757601D11EB8400ED09C8 /* ShellScript */,
 			);
 			buildRules = (
@@ -308,13 +308,16 @@
 				TargetAttributes = {
 					56BB7A5A1CE360590095045C = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					56BB7A6E1CE360590095045C = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 56BB7A5A1CE360590095045C;
 					};
 					56BB7A791CE360590095045C = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 56BB7A5A1CE360590095045C;
 					};
 				};
@@ -368,14 +371,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32F6340EDDA40536D228B47E /* 📦 Copy Pods Resources */ = {
+		32F6340EDDA40536D228B47E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,14 +399,14 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		6883C2B5DB3FE3DC47603EC3 /* 📦 Embed Pods Frameworks */ = {
+		6883C2B5DB3FE3DC47603EC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,14 +414,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E28EC0EB25F4CD243F9B782B /* 📦 Check Pods Manifest.lock */ = {
+		E28EC0EB25F4CD243F9B782B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,10 +606,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Otec/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inaka.otec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -617,10 +621,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Otec/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inaka.otec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -632,6 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Inaka.OtecTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otec.app/Otec";
 			};
 			name = Debug;
@@ -644,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Inaka.OtecTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otec.app/Otec";
 			};
 			name = Release;
@@ -655,6 +662,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Inaka.OtecUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Otec;
 			};
 			name = Debug;
@@ -666,6 +674,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Inaka.OtecUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Otec;
 			};
 			name = Release;

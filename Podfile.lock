@@ -1,28 +1,31 @@
 PODS:
-  - IKEventSource (1.1.3)
-  - Jayme (2.0.0)
-  - SwiftyJSON (2.3.2)
+  - IKEventSource (1.1.4)
+  - Jayme (2.0.2)
 
 DEPENDENCIES:
-  - IKEventSource
-  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `v2.0.1`)
-  - SwiftyJSON
+  - IKEventSource (from `git@github.com:inaka/EventSource.git`, branch `swift2.3`)
+  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `swift2.3`)
 
 EXTERNAL SOURCES:
+  IKEventSource:
+    :branch: swift2.3
+    :git: git@github.com:inaka/EventSource.git
   Jayme:
-    :branch: v2.0.1
+    :branch: swift2.3
     :git: git@github.com:inaka/Jayme.git
 
 CHECKOUT OPTIONS:
+  IKEventSource:
+    :commit: 90667ff1e9bdaf68880e2135b076bd70437e2d77
+    :git: git@github.com:inaka/EventSource.git
   Jayme:
-    :commit: 94651f7d3381389be843b527806fd4c1c0f0bb65
+    :commit: c341d565ada173e10eb582ebfc37201dce0d14d0
     :git: git@github.com:inaka/Jayme.git
 
 SPEC CHECKSUMS:
-  IKEventSource: 323157f5afd0dd65e0742f8906f2f2bd1e747f3e
-  Jayme: 3ad1eeca0dc3dd4e1db8266a63e82d641d5fc4c0
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  IKEventSource: 7a3b82627c83ce247fed75b1b03f0c32a0759639
+  Jayme: a64fec6530e9812cf808a4ffa27e2cafd0bd0b1f
 
-PODFILE CHECKSUM: cabc084d179fb1283d5ee3f817415a5326173628
+PODFILE CHECKSUM: 51c7f75dc60ed7ffd579658a0a6502fd4814ae3c
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

@@ -24,7 +24,6 @@
 
 import Foundation
 import Jayme
-import SwiftyJSON
 
 struct Newspaper: Identifiable {
     let id: String
@@ -34,10 +33,9 @@ struct Newspaper: Identifiable {
 extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
     
     init(dictionary: [String: AnyObject]) throws {
-        let json = JSON(dictionary)
         guard let
-            id = json["name"].string,
-            description = json["description"].string
+            id = dictionary["name"] as? String,
+            description = dictionary["description"] as? String
             else { throw JaymeError.ParsingError }
         self.id = id
         self.newspaperDescription = description

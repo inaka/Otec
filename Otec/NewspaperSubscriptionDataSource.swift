@@ -45,7 +45,7 @@ class NewspaperSubscriptionDataSource: NSObject, UITableViewDataSource {
             cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil).first as! NewspaperSubscriptionTableViewCell
+        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil)!.first as! NewspaperSubscriptionTableViewCell
         cell.newspaper = newspaper
         cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None        
         return cell

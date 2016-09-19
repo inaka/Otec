@@ -42,7 +42,7 @@ class NewsDataSource: NSObject, UITableViewDataSource {
             cell.news = self.news[indexPath.row]
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil).first as! NewsTableViewCell
+        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil)!.first as! NewsTableViewCell
         cell.news = self.news[indexPath.row]
         return cell
     }

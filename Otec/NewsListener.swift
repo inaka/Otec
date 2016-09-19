@@ -30,20 +30,20 @@ class NewsListener {
     
     let name = "news"
     
-    func listenToNewsWithEventSource(eventSource: EventSource, forNewspapersIDs newspapersIDs: [String], newReceivedCompletion completion: Result <News, JaymeError> -> ()) {
+    func listenToNewsWithEventSource(_ eventSource: EventSource, forNewspapersIDs newspapersIDs: [String], newReceivedCompletion completion: @escaping (Result <News, JaymeError>) -> ()) {
         newspapersIDs.forEach {
             eventSource.addEventListener($0) { (esId, esEvent, esData) in
                 guard let id = esId,
                     let event = esEvent,
                     let data =  esData else {
-                        completion (Result.Failure(JaymeError.BadResponse))
+                        completion (Result.failure(JaymeError.badResponse))
                         return
                 }
                 guard let new = try? self.createNewFromSSEEvent(id, event: event, data: data) else {
-                    completion (Result.Failure(JaymeError.ParsingError))
+                    completion (Result.failure(JaymeError.parsingError))
                     return
                 }
-                completion(Result.Success(new))
+                completion(Result.success(new))
             }
         }
     }
@@ -52,14 +52,14 @@ class NewsListener {
         return EventSource(url: self.urlStringWithPath(self.name), headers: ["Accept":"application/json"])
     }
     
-    private func urlStringWithPath(path: String) -> String {
+    fileprivate func urlStringWithPath(_ path: String) -> String {
         return Constants.CanillitaBackendLocalHostURL + "/" + path
     }
 }
 
 extension NewsListener {
-    private func createNewFromSSEEvent(id: String, event: String, data: String) throws -> News {
-        let titleAndBodyOfNew = data.componentsSeparatedByString("\n")
+    fileprivate func createNewFromSSEEvent(_ id: String, event: String, data: String) throws -> News {
+        let titleAndBodyOfNew = data.components(separatedBy: "\n")
         let title = titleAndBodyOfNew[0]
         let body = titleAndBodyOfNew[1]
         
@@ -67,8 +67,8 @@ extension NewsListener {
                              "body":body,
                              "id":id,
                              "newspaper_name":event]
-        guard let new = try? News(dictionary:newDictionary) else {
-            throw JaymeError.ParsingError
+        guard let new = try? News(dictionary:newDictionary as [String : AnyObject]) else {
+            throw JaymeError.parsingError
         }
         return new
     }

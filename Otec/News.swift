@@ -34,25 +34,25 @@ struct News: Identifiable {
 
 extension News: DictionaryInitializable, DictionaryRepresentable {
     
-    init(dictionary: [String: AnyObject]) throws {
+    init(dictionary: [String: Any]) throws {
         guard let
             id = dictionary["id"] as? String,
-            title = dictionary["title"] as? String,
-            body = dictionary["body"] as? String,
-            newspaper = dictionary["newspaper_name"] as? String
-            else {  throw JaymeError.ParsingError }
+            let title = dictionary["title"] as? String,
+            let body = dictionary["body"] as? String,
+            let newspaper = dictionary["newspaper_name"] as? String
+            else {  throw JaymeError.parsingError }
         self.id = id
         self.title = title
         self.body = body
         self.newspaper = newspaper
     }
 
-    var dictionaryValue: [String: AnyObject] {
+    var dictionaryValue: [String: Any] {
         return [
-            "id": self.id,
-            "title": self.title,
-            "body": self.body,
-            "newspaper": self.newspaper
+            "id": self.id as AnyObject,
+            "title": self.title as AnyObject,
+            "body": self.body as AnyObject,
+            "newspaper": self.newspaper as AnyObject
         ]
     }
     

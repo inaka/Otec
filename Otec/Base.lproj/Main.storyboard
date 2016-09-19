@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Epa-xT-1jb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epa-xT-1jb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -31,29 +32,29 @@
                         <viewControllerLayoutGuide type="bottom" id="frB-Te-JKC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tMF-UK-qsg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-Ot-Enj">
-                                <rect key="frame" x="50" y="84" width="500" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-Ot-Enj">
+                                <frame key="frameInset" minX="50" minY="84" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzg-pW-hnY">
-                                <rect key="frame" x="70" y="134" width="460" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzg-pW-hnY">
+                                <frame key="frameInset" minX="70" minY="134" width="460" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OBH-kB-cQQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Enter">
-                                    <color key="titleColor" red="1" green="0.061523099774187906" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.061523099774187906" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="Hog-e0-Ej3" eventType="touchUpInside" id="0Vf-1C-6Nu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-sr-x1c">
-                                <rect key="frame" x="70" y="194" width="460" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-sr-x1c">
+                                <frame key="frameInset" minX="70" minY="194" width="460" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FDu-xn-e7y"/>
                                 </constraints>
@@ -63,22 +64,22 @@
                                     <segue destination="niM-FL-IoS" kind="show" identifier="createNewspaper" id="Znz-W3-jy7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-o8-r0u">
-                                <rect key="frame" x="70" y="243" width="460" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-o8-r0u">
+                                <frame key="frameInset" minX="70" minY="243" width="460" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="bAi-AL-WHw"/>
                                     <constraint firstAttribute="height" constant="30" id="cYh-tu-cLK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Enter as guest user">
-                                    <color key="titleColor" red="1" green="0.061523099769999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.061523099769999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginAsGuestUser:" destination="Hog-e0-Ej3" eventType="touchUpInside" id="NJV-u8-YNg"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O1x-sr-x1c" firstAttribute="leading" secondItem="tMF-UK-qsg" secondAttribute="leadingMargin" constant="50" id="4Ms-hg-txd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kzg-pW-hnY" secondAttribute="trailing" constant="50" id="7eq-Kh-iLI"/>
@@ -112,20 +113,20 @@
                         <viewControllerLayoutGuide type="bottom" id="JTX-ha-F52"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Oq-BB-tqA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter newspaper name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTV-O3-10p">
-                                <rect key="frame" x="50" y="84" width="500" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter newspaper name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTV-O3-10p">
+                                <frame key="frameInset" minX="50" minY="84" width="500" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yoK-hq-hz9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kj1-GC-v8K">
-                                <rect key="frame" x="50" y="149" width="500" height="431"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kj1-GC-v8K">
+                                <frame key="frameInset" minX="50" minY="149" width="500" height="431"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -135,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dTV-O3-10p" firstAttribute="top" secondItem="kNQ-pe-5s7" secondAttribute="bottom" constant="20" id="11G-S6-400"/>
                             <constraint firstItem="Kj1-GC-v8K" firstAttribute="leading" secondItem="9Oq-BB-tqA" secondAttribute="leading" constant="50" id="41i-bp-CLR"/>
@@ -171,22 +172,21 @@
                         <viewControllerLayoutGuide type="bottom" id="7lV-xG-FNO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="itk-th-kxM">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vyK-me-ron">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vyK-me-ron">
+                                <frame key="frameInset" width="600" height="536"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="122" id="LhC-Vh-HHR" customClass="NewsTableViewCell" customModule="Otec" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LhC-Vh-HHR" id="WKZ-a6-0oC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
+                                            <frame key="frameInset" width="600" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Planet" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-bN-Fqv">
-                                                    <rect key="frame" x="490" y="10" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="A5s-mk-lTD"/>
                                                         <constraint firstAttribute="height" constant="21" id="LPN-Ib-Ggz"/>
@@ -194,21 +194,19 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="OAY-se-c3N"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.93286005790000004" blue="0.00092539059730000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.93286005790000004" blue="0.00092539059730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metahuman research discovered!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-b5-kYl">
-                                                    <rect key="frame" x="10" y="10" width="480" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dnX-rG-8RP"/>
                                                         <constraint firstAttribute="height" constant="21" id="gT2-d4-D5q"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPZ-N8-eyE">
-                                                    <rect key="frame" x="10" y="41" width="580" height="62"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="62" id="hO1-dU-mds"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="rMV-X0-sr1"/>
@@ -216,7 +214,7 @@
                                                     <string key="text">A serious report was run today from the Centropolis Court. Dr Howard X. Jett was arrested the night before due to possession of illegla scientific R&amp;D, and working sattelite rocket, both confiscated. Dr. Jett claims to have discovered the secret behind superpowers themselves, and the research papers &amp; vieo logs brought with him prove this.
 Clark Kent reported on this in a strangely rhetoical manner, "If this research gets out, what would Superman do?"</string>
                                                     <fontDescription key="fontDescription" name="Menlo-Italic" family="Menlo" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -252,14 +250,13 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WNu-vs-KDU">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IRJ-Gm-men"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vyK-me-ron" secondAttribute="trailing" id="4lT-Gv-S9k"/>
                             <constraint firstItem="7lV-xG-FNO" firstAttribute="top" secondItem="vyK-me-ron" secondAttribute="bottom" id="5Y2-fb-7VS"/>
@@ -308,22 +305,21 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                         <viewControllerLayoutGuide type="bottom" id="Vhq-Lf-J33"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TFs-vq-W6e">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-Kz-LT1">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-Kz-LT1">
+                                <frame key="frameInset" minY="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewspaperSubscriptionCell" id="PQF-co-1N3" customClass="NewspaperSubscriptionTableViewCell" customModule="Otec" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQF-co-1N3" id="vIm-QO-OMG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
+                                            <frame key="frameInset" width="600" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-jQ-frx">
-                                                    <rect key="frame" x="10" y="10" width="582" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="a1I-rG-aAw"/>
                                                     </constraints>
@@ -332,7 +328,6 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwQ-FF-hhF">
-                                                    <rect key="frame" x="10" y="36" width="580" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="47" id="103-Z4-FKL"/>
                                                     </constraints>
@@ -362,7 +357,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vhq-Lf-J33" firstAttribute="top" secondItem="1TQ-Kz-LT1" secondAttribute="bottom" id="7Sj-tx-pkd"/>
                             <constraint firstItem="1TQ-Kz-LT1" firstAttribute="leading" secondItem="TFs-vq-W6e" secondAttribute="leading" id="FGq-Aj-eiG"/>
@@ -395,20 +390,20 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                         <viewControllerLayoutGuide type="bottom" id="1Ey-gX-stQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c5h-Uc-kS6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter new title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-0A-GFU">
-                                <rect key="frame" x="50" y="84" width="500" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter new title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-0A-GFU">
+                                <frame key="frameInset" minX="50" minY="84" width="500" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yHJ-7K-vNa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4h-tw-uiG">
-                                <rect key="frame" x="50" y="149" width="500" height="431"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4h-tw-uiG">
+                                <frame key="frameInset" minX="50" minY="149" width="500" height="431"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -418,7 +413,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1Ey-gX-stQ" firstAttribute="top" secondItem="P4h-tw-uiG" secondAttribute="bottom" constant="20" id="5fV-C2-Fgf"/>
                             <constraint firstItem="gp7-0A-GFU" firstAttribute="top" secondItem="Rz8-gf-FJ5" secondAttribute="bottom" constant="20" id="DhU-j3-Axm"/>
@@ -455,18 +450,19 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                         <viewControllerLayoutGuide type="bottom" id="h8Z-jJ-251"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="d5E-Ka-lpE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0A-gu-j63">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" minY="64" width="600" height="536"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="jz3-x2-dEj" id="Sev-lX-yZg"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -486,27 +482,27 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                         <viewControllerLayoutGuide type="bottom" id="H73-6c-b0u"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U6g-WQ-Jdh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdT-jv-cIc">
-                                <rect key="frame" x="10" y="74" width="580" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdT-jv-cIc">
+                                <frame key="frameInset" minX="10" minY="74" width="580" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nws-WM-NUg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuN-sf-34G">
-                                <rect key="frame" x="0.0" y="99" width="600" height="501"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuN-sf-34G">
+                                <frame key="frameInset" minY="99" width="600" height="501"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H73-6c-b0u" firstAttribute="top" secondItem="GuN-sf-34G" secondAttribute="bottom" id="F0R-FX-cpA"/>
                             <constraint firstAttribute="trailing" secondItem="GuN-sf-34G" secondAttribute="trailing" id="SpW-6V-HUN"/>
@@ -526,7 +522,7 @@ Clark Kent reported on this in a strangely rhetoical manner, "If this research g
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFR-uw-xkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="705"/>
+            <point key="canvasLocation" x="2687" y="473"/>
         </scene>
     </scenes>
 </document>

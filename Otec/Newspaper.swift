@@ -32,21 +32,19 @@ struct Newspaper: Identifiable {
 
 extension Newspaper: DictionaryInitializable, DictionaryRepresentable {
     
-    init(dictionary: [String: AnyObject]) throws {
+    init(dictionary: [String: Any]) throws {
         guard let
             id = dictionary["name"] as? String,
-            description = dictionary["description"] as? String
-            else { throw JaymeError.ParsingError }
+            let description = dictionary["description"] as? String
+            else { throw JaymeError.parsingError }
         self.id = id
         self.newspaperDescription = description
     }
     
-    var dictionaryValue: [String: AnyObject] {
+    var dictionaryValue: [String: Any] {
         return [
-            "name": self.id,
-            "description": self.newspaperDescription
+            "name": self.id as AnyObject,
+            "description": self.newspaperDescription as AnyObject
         ]
     }
 }
-
-extension String: CustomStringConvertible { public var description: String { return self } }

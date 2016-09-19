@@ -36,12 +36,12 @@ class NewspaperNewsListViewController: UIViewController, UITableViewDelegate {
         self.retrieveNewsFromServer()
     }
     
-    private func retrieveNewsFromServer() {
+    fileprivate func retrieveNewsFromServer() {
         NewsListener().listenToNewsWithEventSource(NewsListener().newsEventSource(), forNewspapersIDs: [self.newspaper.id]) { responseNew in
             switch responseNew {
-            case .Failure(_):
+            case .failure(_):
                 self.showAlertWithTitle("Error", message: "Server response corrupted.")
-            case .Success(let new):
+            case .success(let new):
                 self.news.append(new)
                 self.dataSource = NewsDataSource(news: self.news)
                 self.tableView.dataSource = self.dataSource
@@ -50,14 +50,14 @@ class NewspaperNewsListViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("newsDetailsViewController") as! NewsDetailsViewController
-        viewController.new = self.dataSource.news[indexPath.row]
+        let viewController = storyboard.instantiateViewController(withIdentifier: "newsDetailsViewController") as! NewsDetailsViewController
+        viewController.new = self.dataSource.news[(indexPath as NSIndexPath).row]
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

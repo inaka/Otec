@@ -1,31 +1,31 @@
 PODS:
-  - IKEventSource (1.1.4)
+  - IKEventSource (1.2)
   - Jayme (2.0.2)
 
 DEPENDENCIES:
-  - IKEventSource (from `git@github.com:inaka/EventSource.git`, branch `swift2.3`)
-  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `swift2.3`)
+  - IKEventSource (from `git@github.com:robbiet480/EventSource.git`, branch `swift3`)
+  - Jayme (from `git@github.com:inaka/Jayme.git`, branch `swift3.0`)
 
 EXTERNAL SOURCES:
   IKEventSource:
-    :branch: swift2.3
-    :git: git@github.com:inaka/EventSource.git
+    :branch: swift3
+    :git: git@github.com:robbiet480/EventSource.git
   Jayme:
-    :branch: swift2.3
+    :branch: swift3.0
     :git: git@github.com:inaka/Jayme.git
 
 CHECKOUT OPTIONS:
   IKEventSource:
-    :commit: 90667ff1e9bdaf68880e2135b076bd70437e2d77
-    :git: git@github.com:inaka/EventSource.git
+    :commit: 888ccedd4af1bccb3847940553598ab80ee5fb9f
+    :git: git@github.com:robbiet480/EventSource.git
   Jayme:
-    :commit: c341d565ada173e10eb582ebfc37201dce0d14d0
+    :commit: 8946f910a22da5ac0ecc08f3015d571cd12fb24f
     :git: git@github.com:inaka/Jayme.git
 
 SPEC CHECKSUMS:
-  IKEventSource: 7a3b82627c83ce247fed75b1b03f0c32a0759639
+  IKEventSource: a8b2ae0aa469d3dcf3a1d99a102430d46e95e8bd
   Jayme: a64fec6530e9812cf808a4ffa27e2cafd0bd0b1f
 
-PODFILE CHECKSUM: 51c7f75dc60ed7ffd579658a0a6502fd4814ae3c
+PODFILE CHECKSUM: 0fb10f3ccedc3bae39cd85da4542c9d58e7614cd
 
 COCOAPODS: 1.0.1

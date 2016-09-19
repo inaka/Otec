@@ -1,5 +1,5 @@
 use_frameworks!
 target 'Otec' do
-	pod 'IKEventSource', :git => 'git@github.com:inaka/EventSource.git', :branch => 'swift2.3'
-	pod 'Jayme', :git => 'git@github.com:inaka/Jayme.git', :branch => 'swift2.3'
+	pod 'IKEventSource', :git => 'git@github.com:robbiet480/EventSource.git', :branch => 'swift3'
+	pod 'Jayme', :git => 'git@github.com:inaka/Jayme.git', :branch => 'swift3.0'
 end

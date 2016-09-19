@@ -1,5 +1,5 @@
 //
-//  NSURLSessionBackend+Otec.swift
+//  URLSessionBackend+Otec.swift
 //  Otec
 //
 // Copyright (c) 2016 Inaka - http://inaka.net/
@@ -25,11 +25,11 @@
 import Foundation
 import Jayme
 
-extension NSURLSessionBackend {
-    static func otecBackend() -> NSURLSessionBackend {
+extension URLSessionBackend {
+    static func otecBackend() -> URLSessionBackend {
         let httpHeaders = [HTTPHeader(field: "Accept", value: "application/json"),
                                                  HTTPHeader(field: "Content-Type", value: "application/json")]
-        let configuration = NSURLSessionBackendConfiguration(basePath:Constants.CanillitaBackendLocalHostURL, httpHeaders:httpHeaders)
-        return NSURLSessionBackend(configuration: configuration)
+        let configuration = URLSessionBackendConfiguration(basePath:Constants.CanillitaBackendLocalHostURL, httpHeaders:httpHeaders)
+        return URLSessionBackend(configuration: configuration)
     }
 }

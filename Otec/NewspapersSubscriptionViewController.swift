@@ -42,34 +42,34 @@ class NewspapersSubscriptionViewController: UIViewController, UITableViewDelegat
         self.retrieveAndShowAllNewspapers()
     }
     
-    private func comesFromFeed() -> Bool {
+    fileprivate func comesFromFeed() -> Bool {
         var comesFromFeed = false
         
         self.navigationController?.viewControllers.forEach {
-            if $0.isKindOfClass(NewsFeedViewController) { comesFromFeed = true }
+            if $0.isKind(of: NewsFeedViewController.self) { comesFromFeed = true }
         }
         return comesFromFeed
     }
     
-    private func retrieveAndShowAllNewspapers() {
+    fileprivate func retrieveAndShowAllNewspapers() {
         let future = NewspaperRepository().findAll()
 
         future.start() { result in
             switch result {
-            case .Success(let newspapers):
+            case .success(let newspapers):
                 self.dataSource = NewspaperSubscriptionDataSource(newspapers: newspapers, newspaperSubscribedIDs: self.newspaperSubscribedIDs)
                 self.allNewspapers = newspapers
                 self.tableView.dataSource = self.dataSource
                 self.tableView.reloadData()
-            case .Failure(_):
+            case .failure(_):
                 self.showAlertWithTitle("Error", message: "Couldn't get the newspapers list. Go back and try again.")
             }
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let newspaper = self.allNewspapers[indexPath.row]
+        let newspaper = self.allNewspapers[(indexPath as NSIndexPath).row]
         
         if self.newspaperSubscribedIDs.contains(newspaper.id) {
             self.newspaperSubscribedIDs = self.newspaperSubscribedIDs.filter { $0 != newspaper.id }

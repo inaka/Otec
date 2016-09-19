@@ -33,51 +33,51 @@ class LoginViewController: UIViewController {
         self.checkIfLoggedInThenShowFeed()
     }
 
-    private func checkIfLoggedInThenShowFeed() {
+    fileprivate func checkIfLoggedInThenShowFeed() {
         if UserNewspaperSession.isUserLoggedIn() {
             self.pushFeedsViewController(animated: false)
         }
     }
     
-    private func deviceHasSubscriptions() -> Bool {
+    fileprivate func deviceHasSubscriptions() -> Bool {
         return !UserNewspaperSession.newspapersSubscribedIDs().isEmpty
     }
     
-    private func pushSubscriptionsViewController(animated animated: Bool) {
+    fileprivate func pushSubscriptionsViewController(animated: Bool) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("NewspapersSubscriptionViewController") as! NewspapersSubscriptionViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NewspapersSubscriptionViewController") as! NewspapersSubscriptionViewController
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    private func pushFeedsViewController(animated animated: Bool) {
+    fileprivate func pushFeedsViewController(animated: Bool) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("NewsFeedViewController") as! NewsFeedViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NewsFeedViewController") as! NewsFeedViewController
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    @IBAction func login(sender: UIButton) {
+    @IBAction func login(_ sender: UIButton) {
         if !self.haveValidTexts([self.newspaperTextfield]) {
             self.showAlertWithTitle("Error", message: "Newspaper name is requiered")
             return
         }
         
-        let future = NewspaperRepository().findByID(newspaperTextfield.text!)
+        let future = NewspaperRepository().find(byId: newspaperTextfield.text!)
         future.start() { result in
             switch result {
-            case .Success(let newspaper):
+            case .success(let newspaper):
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
                     if self.deviceHasSubscriptions() {
                         self.pushFeedsViewController(animated: true)
                     }else {
                         self.pushSubscriptionsViewController(animated: true)
                     }
-            case .Failure(_):
+            case .failure(_):
                     self.showAlertWithTitle("Error", message: "Check your newspaper name and try again")
             }
         }
     }
 
-    @IBAction func loginAsGuestUser(sender: UIButton) {
+    @IBAction func loginAsGuestUser(_ sender: UIButton) {
         UserNewspaperSession.deleteUserNewspaper()
         if self.deviceHasSubscriptions() {
             self.pushFeedsViewController(animated: true)
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
         }
     }
  
-    private func haveValidTexts(textInputs: [TextValidable]) -> Bool {
+    fileprivate func haveValidTexts(_ textInputs: [TextValidable]) -> Bool {
         var inputsAllValid = true
         
         textInputs.forEach { if !$0.hasValidText { inputsAllValid = false } }

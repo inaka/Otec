@@ -26,32 +26,32 @@ import UIKit
 
 class NewspaperSubscriptionDataSource: NSObject, UITableViewDataSource {
 
-    private let newspapers: [Newspaper]
-    private let newspapersSubscribedIDs: [String]
+    fileprivate let newspapers: [Newspaper]
+    fileprivate let newspapersSubscribedIDs: [String]
     
     init(newspapers: [Newspaper], newspaperSubscribedIDs subscriptionsIDs: [String]) {
         self.newspapers = newspapers
         self.newspapersSubscribedIDs = subscriptionsIDs
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.newspapers.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let newspaper = self.newspapers[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier(Constants.NewspapersSubscriptionCellIdentifier) as? NewspaperSubscriptionTableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let newspaper = self.newspapers[(indexPath as NSIndexPath).row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.NewspapersSubscriptionCellIdentifier) as? NewspaperSubscriptionTableViewCell {
             cell.newspaper = newspaper
-            cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None
+            cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .checkmark : .none
             return cell
         }
-        let cell = NSBundle.mainBundle().loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil)!.first as! NewspaperSubscriptionTableViewCell
+        let cell = Bundle.main.loadNibNamed(Constants.NewsFeedCellClassName, owner: self, options: nil)!.first as! NewspaperSubscriptionTableViewCell
         cell.newspaper = newspaper
-        cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .Checkmark : .None        
+        cell.accessoryType = self.newspaperIsSubscribed(newspaper, newspapersSubscribedIDs: self.newspapersSubscribedIDs) ? .checkmark : .none        
         return cell
     }
     
-    private func newspaperIsSubscribed(newspaper: Newspaper, newspapersSubscribedIDs subscriptionsIDs: [String]) -> Bool {
+    fileprivate func newspaperIsSubscribed(_ newspaper: Newspaper, newspapersSubscribedIDs subscriptionsIDs: [String]) -> Bool {
         return subscriptionsIDs.contains(newspaper.id)
     }
 }

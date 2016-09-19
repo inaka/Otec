@@ -27,7 +27,7 @@ import Jayme
 class NewspaperRepository: CRUDRepository {
     
     typealias EntityType = Newspaper
-    let backend = NSURLSessionBackend.otecBackend()
+    let backend = URLSessionBackend.otecBackend()
     let name = "newspapers"
     
 }

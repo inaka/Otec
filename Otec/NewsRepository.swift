@@ -28,7 +28,7 @@ import IKEventSource
 class NewsRepository: CRUDRepository {
     
     typealias EntityType = News
-    let backend = NSURLSessionBackend.otecBackend()
+    let backend = URLSessionBackend.otecBackend()
     var name: String {
         let userNewspaper = UserNewspaperSession.userNewspaperName()
         

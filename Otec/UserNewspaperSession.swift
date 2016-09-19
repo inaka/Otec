@@ -28,29 +28,29 @@ import Foundation
 struct UserNewspaperSession {
     
     static func isUserLoggedIn() -> Bool {
-        return NSUserDefaults.standardUserDefaults().objectForKey(Constants.NewspaperUserDefaultsKey) != nil
+        return UserDefaults.standard.object(forKey: Constants.NewspaperUserDefaultsKey) != nil
     }
     
     static func userNewspaperName() -> String {
-        return NSUserDefaults.standardUserDefaults().objectForKey(Constants.NewspaperUserDefaultsKey) as! String
+        return UserDefaults.standard.object(forKey: Constants.NewspaperUserDefaultsKey) as! String
     }
     
-    static func saveUserNewspaper(newspaperName: String) {
-        NSUserDefaults.standardUserDefaults().setObject(newspaperName, forKey:Constants.NewspaperUserDefaultsKey)
+    static func saveUserNewspaper(_ newspaperName: String) {
+        UserDefaults.standard.set(newspaperName, forKey:Constants.NewspaperUserDefaultsKey)
     }
     
     static func deleteUserNewspaper() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(Constants.NewspaperUserDefaultsKey)
+        UserDefaults.standard.removeObject(forKey: Constants.NewspaperUserDefaultsKey)
     }
     
     static func newspapersSubscribedIDs() -> [String] {
-        let subscriptions = NSUserDefaults.standardUserDefaults().objectForKey(Constants.NewspapersSubscribedIDsDefaultsKey) as? [String] ?? [String]()
+        let subscriptions = UserDefaults.standard.object(forKey: Constants.NewspapersSubscribedIDsDefaultsKey) as? [String] ?? [String]()
         
         return subscriptions
     }
     
-    static func saveNewspapersIDsSubscription(newspapersSubscribed: [String]) {
-        NSUserDefaults.standardUserDefaults().setObject(newspapersSubscribed, forKey:Constants.NewspapersSubscribedIDsDefaultsKey)
+    static func saveNewspapersIDsSubscription(_ newspapersSubscribed: [String]) {
+        UserDefaults.standard.set(newspapersSubscribed, forKey:Constants.NewspapersSubscribedIDsDefaultsKey)
     }
     
 }

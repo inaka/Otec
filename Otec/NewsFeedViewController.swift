@@ -35,17 +35,17 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.retrieveNewsFromServer()
     }
     
-    private func retrieveNewsFromServer() {
+    fileprivate func retrieveNewsFromServer() {
         NewsListener().listenToNewsWithEventSource(self.eventSource, forNewspapersIDs: UserNewspaperSession.newspapersSubscribedIDs()) { responseNew in
             switch responseNew {
-            case .Failure(_):
+            case .failure(_):
                 self.showAlertWithTitle("Error", message: "Server response corrupted.")
-            case .Success(let new):
+            case .success(let new):
                 self.news.append(new)
                 self.dataSource = NewsDataSource(news: self.news)
                 self.tableView.dataSource = self.dataSource
@@ -54,45 +54,45 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    @IBAction func showUserOptions(sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+    @IBAction func showUserOptions(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let pushSubscriptionsAction = UIAlertAction(title: "Subscriptions", style: .Default) { (action) in
+        let pushSubscriptionsAction = UIAlertAction(title: "Subscriptions", style: .default) { (action) in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("NewspapersSubscriptionViewController") as! NewspapersSubscriptionViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: "NewspapersSubscriptionViewController") as! NewspapersSubscriptionViewController
             self.navigationController?.pushViewController(viewController, animated: true)
-            alertController.dismissViewControllerAnimated(false, completion: nil)
+            alertController.dismiss(animated: false, completion: nil)
         }
         alertController.addAction(pushSubscriptionsAction)
         
         
         if UserNewspaperSession.isUserLoggedIn() {
-            let pushCreateNewsAction = UIAlertAction(title: "Create New", style: .Default) { (action) in
+            let pushCreateNewsAction = UIAlertAction(title: "Create New", style: .default) { (action) in
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewControllerWithIdentifier("createNewsViewController") as! CreateNewsViewController
+                let viewController = storyboard.instantiateViewController(withIdentifier: "createNewsViewController") as! CreateNewsViewController
                 self.navigationController?.pushViewController(viewController, animated: true)
-                alertController.dismissViewControllerAnimated(false, completion: nil)
+                alertController.dismiss(animated: false, completion: nil)
             }
             alertController.addAction(pushCreateNewsAction)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            alertController.dismissViewControllerAnimated(true, completion: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(cancelAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func logout(sender: UIBarButtonItem) {
+    @IBAction func logout(_ sender: UIBarButtonItem) {
             UserNewspaperSession.deleteUserNewspaper()
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            let _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("newsDetailsViewController") as! NewsDetailsViewController
-        viewController.new = self.news[indexPath.row]
+        let viewController = storyboard.instantiateViewController(withIdentifier: "newsDetailsViewController") as! NewsDetailsViewController
+        viewController.new = self.news[(indexPath as NSIndexPath).row]
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

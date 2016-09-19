@@ -34,7 +34,7 @@ class CreateNewsViewController: UIViewController {
 
     }
     
-    @IBAction func createNew(sender: UIBarButtonItem) {
+    @IBAction func createNew(_ sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.newNameTextfield, self.newBodyTextView]) {
             self.showAlertWithTitle("Error", message: "Title and body are requiered.")
             return
@@ -45,22 +45,22 @@ class CreateNewsViewController: UIViewController {
                                    "id":"temp-id",
                                    "newspaper_name":UserNewspaperSession.userNewspaperName()]
         
-        guard let new = try? News(dictionary:newDictionary) else {
+        guard let new = try? News(dictionary:newDictionary as [String : AnyObject]) else {
             self.showAlertWithTitle("Error", message: "Something went wrong with the server response.")
             return
         }
         let future = NewsRepository().create(new)
         future.start() { result in
             switch result {
-            case .Success(_):
-                    self.navigationController?.popViewControllerAnimated(true)
-            case .Failure(_):
+            case .success(_):
+                    let _ = self.navigationController?.popViewController(animated: true)
+            case .failure(_):
                 self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }
     }
     
-    private func haveValidTexts(textInputs: [TextValidable]) -> Bool {
+    fileprivate func haveValidTexts(_ textInputs: [TextValidable]) -> Bool {
         var inputsAllValid = true
         
         textInputs.forEach {

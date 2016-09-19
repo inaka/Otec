@@ -36,21 +36,21 @@ class NewsDetailsViewController: UIViewController {
         self.title = self.new.title
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showNewspaperNewsList(_:)))
-        self.newspaperNameLabel.userInteractionEnabled = true 
+        self.newspaperNameLabel.isUserInteractionEnabled = true 
         self.newspaperNameLabel.addGestureRecognizer(tapRecognizer)
     }
     
-    func showNewspaperNewsList(gesture: UITapGestureRecognizer) {
-        let future = NewspaperRepository().findByID(self.new.newspaper)
+    func showNewspaperNewsList(_ gesture: UITapGestureRecognizer) {
+        let future = NewspaperRepository().find(byId: self.new.newspaper)
         
         future.start { result in
             switch result {
-            case .Success(let newspaper):
+            case .success(let newspaper):
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewControllerWithIdentifier("newspaperNewsListViewController") as! NewspaperNewsListViewController
+                let viewController = storyboard.instantiateViewController(withIdentifier: "newspaperNewsListViewController") as! NewspaperNewsListViewController
                 viewController.newspaper = newspaper
                 self.navigationController?.pushViewController(viewController, animated: true)
-            case .Failure(_):
+            case .failure(_):
                 self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }

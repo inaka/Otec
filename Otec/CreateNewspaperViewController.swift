@@ -33,13 +33,13 @@ class CreateNewspaperViewController: UIViewController {
 
     }
     
-    private func pushFeedsViewController(animated animated: Bool) {
+    fileprivate func pushFeedsViewController(animated: Bool) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("NewsFeedViewController") as! NewsFeedViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NewsFeedViewController") as! NewsFeedViewController
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    @IBAction func createNewspaper(sender: UIBarButtonItem) {
+    @IBAction func createNewspaper(_ sender: UIBarButtonItem) {
         if !self.haveValidTexts([self.nameTextfield, self.descriptionTextView]) {
             self.showAlertWithTitle("Error", message: "Name and description are requiered.")
             return
@@ -48,23 +48,23 @@ class CreateNewspaperViewController: UIViewController {
         let newspaperDictionary = ["name":self.nameTextfield.text!,
                                    "description":self.descriptionTextView.text!]
         
-        guard let newspaper = try? Newspaper(dictionary:newspaperDictionary) else {
+        guard let newspaper = try? Newspaper(dictionary:newspaperDictionary as [String : AnyObject]) else {
             self.showAlertWithTitle("Error", message: "Error creating the newspaper.")
             return
         }
         let future = NewspaperRepository().create(newspaper)
         future.start() { result in
             switch result {
-            case .Success(let newspaper):
+            case .success(let newspaper):
                     UserNewspaperSession.saveUserNewspaper(newspaper.id)
                     self.pushFeedsViewController(animated: true)
-            case .Failure(_):
+            case .failure(_):
                     self.showAlertWithTitle("Error", message: "A server error happened.")
             }
         }
     }
     
-    private func haveValidTexts(textInputs: [TextValidable]) -> Bool {
+    fileprivate func haveValidTexts(_ textInputs: [TextValidable]) -> Bool {
         var inputsAllValid = true
         
         textInputs.forEach {

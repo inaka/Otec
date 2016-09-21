@@ -243,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56BB7A831CE360590095045C /* Build configuration list for PBXNativeTarget "Otec" */;
 			buildPhases = (
+				4C77484BA440AED9CCE7628D /* 📦 Check Pods Manifest.lock */,
 				E28EC0EB25F4CD243F9B782B /* [CP] Check Pods Manifest.lock */,
 				56BB7A571CE360590095045C /* Sources */,
 				56BB7A581CE360590095045C /* Frameworks */,
@@ -250,6 +251,8 @@
 				6883C2B5DB3FE3DC47603EC3 /* [CP] Embed Pods Frameworks */,
 				32F6340EDDA40536D228B47E /* [CP] Copy Pods Resources */,
 				562757601D11EB8400ED09C8 /* ShellScript */,
+				509C94A1A28E1BC00FFAE6A1 /* 📦 Embed Pods Frameworks */,
+				DC6BA0A2DD478FE82F033377 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,6 +389,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4C77484BA440AED9CCE7628D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		509C94A1A28E1BC00FFAE6A1 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		562757601D11EB8400ED09C8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +445,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC6BA0A2DD478FE82F033377 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Otec/Pods-Otec-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E28EC0EB25F4CD243F9B782B /* [CP] Check Pods Manifest.lock */ = {

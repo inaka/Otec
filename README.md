@@ -19,9 +19,6 @@ The objective of this app is to show how simple is to use Event Source and Jayme
 In order to try Otec you'll have to either [download the code](https://github.com/inaka/canillita/archive/2.0.1.zip), compile it and run it or download the [latest compiled release](https://github.com/inaka/canillita/releases/download/2.0.1/canillita.zip) and run it. This will allow you to test the application running it in the simulator on the same machine the server is running in since the sample server url is pointing to localhost. However, you can change the ```CanillitaBackendLocalHostURL ``` constant to point to the address where Canillita is running and use it from any device you want. 
 
 ### Contact Us
-For **questions** or **general comments** regarding the use of this library, please use our public
-[hipchat room](http://inaka.net/hipchat).
-
 If you find any **bugs** or have a **problem** while using this library, please [open an issue](https://github.com/inaka/Otec/issues/new) in this repo (or a pull request :)).
 
 And you can check all of our open-source projects at [inaka.github.io](http://inaka.github.io)
